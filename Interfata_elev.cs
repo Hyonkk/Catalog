@@ -22,6 +22,7 @@ namespace Catalog
             global.F_curent.Select();
             global.F_curent.BackColor = Color.Salmon;
             //bebo e handicapat
+            //bebo a ginger
             this.CenterToScreen();
             creare_butoane();
         }
