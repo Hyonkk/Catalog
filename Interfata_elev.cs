@@ -21,6 +21,7 @@ namespace Catalog
             global.F_curent = this;
             global.F_curent.Select();
             global.F_curent.BackColor = Color.Salmon;
+            //bebo e handicapat
             this.CenterToScreen();
             creare_butoane();
         }
