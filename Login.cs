@@ -110,7 +110,10 @@ namespace Catalog
             }
             else
             {
-
+                global.F_curent = new ter_profesor();
+                this.Hide();
+                global.F_curent.ShowDialog();
+                this.Close();
             };
         }
 

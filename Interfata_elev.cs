@@ -20,9 +20,7 @@ namespace Catalog
             InitializeComponent();
             global.F_curent = this;
             global.F_curent.Select();
-            global.F_curent.BackColor = Color.Salmon;
-            //bebo e handicapat
-            //bebo a ginger
+            global.F_curent.BackColor = System.Drawing.Color.LightGray;
             this.CenterToScreen();
             creare_butoane();
         }
@@ -32,7 +30,7 @@ namespace Catalog
             setari.Text = "Setari";
             setari.TextAlign = ContentAlignment.MiddleCenter;
             setari.Size = new Size(150, 50);
-            setari.Location = new Point(30, 100);
+            setari.Location = new Point(30, 150);
             setari.FlatStyle = FlatStyle.Flat;
             setari.Font= new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             global.F_curent.Controls.Add(setari);
@@ -54,7 +52,7 @@ namespace Catalog
             //catalog `button`
             catalog.Text = "Catalog";
             catalog.TextAlign = ContentAlignment.MiddleCenter;
-            catalog.Location = new Point(30, 150);
+            catalog.Location = new Point(30, 250);
             catalog.Size = new Size(150, 50);
             catalog.FlatStyle = FlatStyle.Flat;
             catalog.Font= new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,7 +64,6 @@ namespace Catalog
         {
             setari f = new setari();
             f.Show();
-            
         }
     }
 }

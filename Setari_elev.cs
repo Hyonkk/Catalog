@@ -27,7 +27,6 @@ namespace Catalog
             creare_label();
             this.Select();
         }
-
         private void creare_label()
         {
             //label check 
