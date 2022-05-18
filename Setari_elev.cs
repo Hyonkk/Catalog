@@ -17,6 +17,7 @@ namespace Catalog
         private TextBox schimbare_nume = new TextBox(), schimbare_nume_conf = new TextBox();
         private TextBox schimbare_parola = new TextBox(), schimbare_parola_conf = new TextBox();
         private Label check = new Label();
+        private int verif;
         public setari()
         {
             InitializeComponent();
@@ -89,12 +90,22 @@ namespace Catalog
             schimbare_parola_conf.Top = (int)((this.ClientSize.Height - schimbare_parola_conf.Height) / 2);
             schimbare_parola_conf.Visible = false;
             schimbare_parola_conf.PasswordChar='*';
+            schimbare_parola_conf.TextChanged += new EventHandler(schimbare_parola_conf_TextChanged);
             this.Controls.Add(schimbare_parola_conf);
         }
 
         private void schimbare_nume_conf_TextChanged(object sender, EventArgs e)
         {
             if (String.Equals(schimbare_nume.Text, schimbare_nume_conf.Text))
+            {
+                check.BackColor = Color.Green;
+            }
+            else check.BackColor = Color.Red;
+        }
+
+        private void schimbare_parola_conf_TextChanged(object sender, EventArgs e)
+        {
+            if (String.Equals(schimbare_parola.Text, schimbare_parola_conf.Text))
             {
                 check.BackColor = Color.Green;
             }
@@ -202,13 +213,38 @@ namespace Catalog
             tx1.Visible = false;
             tx2.Visible = false;
             check.Visible = false;
-            if (check.BackColor == Color.Green) ter_elev.eticheta_nume.Text = schimbare_nume.Text;
+
+
+
+            //check.BackColor = Color.Gray;
+
+            //schimbare in database
+
+            if (verif == 1)
+            {            
+                if (check.BackColor == Color.Green)
+                {
+                    ter_elev.eticheta_nume.Text = schimbare_nume.Text;
+                    global.nume_nou = schimbare_nume.Text;
+                    Server.schimbare_user_elev();
+                }
+                else MessageBox.Show("Numele introduse nu coincid", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (check.BackColor == Color.Green)
+                {
+                    global.parola_noua = schimbare_parola.Text;
+                    Server.schimbare_parola_elev();
+                }
+                else MessageBox.Show("Parolele introduse nu coincid", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
+            
+            //resetare textbox uri
             schimbare_nume.Text = "";
             schimbare_nume_conf.Text = "";
             schimbare_parola.Text = "";
             schimbare_parola_conf.Text = "";
-            
-            //check.BackColor = Color.Gray;
         }
 
         private void schimba_user_Click(object sender, EventArgs e)
@@ -245,6 +281,7 @@ namespace Catalog
             tx2.Left = (this.ClientSize.Width - tx2.Width) / 10;
             tx2.Top = (int)((this.ClientSize.Height - tx2.Height) / 2);
 
+            verif = 1;
         }        
         
         private void schimba_parola_Click(object sender, EventArgs e)
@@ -280,6 +317,8 @@ namespace Catalog
 
             tx2.Left = (this.ClientSize.Width - tx2.Width) / 10;
             tx2.Top = (int)((this.ClientSize.Height - tx2.Height) / 2);
+
+            verif = 2;
         }
     }
 }

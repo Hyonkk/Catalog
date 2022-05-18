@@ -7,11 +7,14 @@ using System.Windows.Forms;
 
 namespace Catalog
 {
-    class global
+    static class global
     {
         public static Form F_curent;
         public static Form F_anterior;
         public static int ctr_log;
+        public static string parola_curenta;
+        public static string parola_noua;
         public static string nume_curent;
+        public static string nume_nou;
     }
 }

@@ -101,21 +101,20 @@ namespace Catalog
         private void login_final_click(object sender, EventArgs e)
         {
             global.nume_curent = username.Text;
-            if(global.ctr_log==1)
+            global.parola_curenta = password.Text;
+            Server.conectare();
+            if (Server.ctr == 1)
             {
-                Server.conectare();
-                global.F_curent= new ter_elev();
+                global.F_curent = new ter_elev();
                 this.Hide();
                 global.F_curent.ShowDialog();
                 this.Close();
             }
             else
             {
-                global.F_curent = new ter_profesor();
-                this.Hide();
-                global.F_curent.ShowDialog();
-                this.Close();
-            };
+                string mb = "Nu ai introdus numele sau parola corecta!" + '\n' + "Reincearca!";
+                MessageBox.Show(mb, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //buton login elev
