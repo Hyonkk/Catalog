@@ -103,6 +103,7 @@ namespace Catalog
             global.nume_curent = username.Text;
             if(global.ctr_log==1)
             {
+                Server.conectare();
                 global.F_curent= new ter_elev();
                 this.Hide();
                 global.F_curent.ShowDialog();
