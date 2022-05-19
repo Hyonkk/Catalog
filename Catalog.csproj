@@ -51,11 +51,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="catalog_elev.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="catalog_elev.Designer.cs">
+      <DependentUpon>catalog_elev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setari_profesor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>Setari_profesor.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfata_elev.cs">
       <SubType>Form</SubType>
@@ -85,6 +92,12 @@
     <Compile Include="Interfata_profesor.Designer.cs">
       <DependentUpon>Interfata_profesor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="catalog_elev.resx">
+      <DependentUpon>catalog_elev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Setari_profesor.resx">
+      <DependentUpon>Setari_profesor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfata_profesor.resx">
       <DependentUpon>Interfata_profesor.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +118,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="DataBaseDataSet.xsc">
       <DependentUpon>DataBaseDataSet.xsd</DependentUpon>
@@ -132,6 +146,49 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NewFile1.txt" />
+    <None Include="Resources\output-onlinepngtools %2814%29.png" />
+    <None Include="Resources\output-onlinepngtools %2813%29.png" />
+    <None Include="Resources\output-onlinepngtools %2812%29.png" />
+    <None Include="Resources\output-onlinepngtools %2811%29.png" />
+    <None Include="Resources\output-onlinepngtools %2810%29.png" />
+    <None Include="Resources\output-onlinepngtools %289%29.png" />
+    <None Include="Resources\output-onlinepngtools %288%29.png" />
+    <None Include="Resources\output-onlinepngtools %287%29.png" />
+    <None Include="Resources\output-onlinepngtools %286%29.png" />
+    <None Include="Resources\output-onlinepngtools %285%29.png" />
+    <None Include="Resources\output-onlinepngtools %284%29.png" />
+    <None Include="Resources\output-onlinepngtools %283%291.png" />
+    <None Include="Resources\output-onlinepngtools %283%29.png" />
+    <None Include="Resources\output-onlinepngtools %282%29.png" />
+    <None Include="Resources\output-onlinepngtools %281%291.png" />
+    <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\pattern21.png" />
+    <None Include="Resources\pattern2.png" />
+    <None Include="Resources\output-onlinepngtools%2818%29.png" />
+    <None Include="Resources\output-onlinepngtools%2817%29.png" />
+    <None Include="Resources\output-onlinepngtools%2816%29.png" />
+    <None Include="Resources\istockphoto-1135686211-612x612.jpg" />
+    <None Include="Resources\output-onlinepngtools%2815%29.png" />
+    <None Include="Resources\output-onlinepngtools%2814%29.png" />
+    <None Include="Resources\output-onlinepngtools%2813%291.png" />
+    <None Include="Resources\output-onlinepngtools%2813%29.png" />
+    <None Include="Resources\pattern.png" />
+    <None Include="Resources\man_icon.png" />
+    <None Include="Resources\output-onlinepngtools%2812%29.png" />
+    <None Include="Resources\output-onlinepngtools%2810%29.png" />
+    <None Include="Resources\output-onlinepngtools%289%29.png" />
+    <None Include="Resources\output-onlinepngtools%288%29.png" />
+    <None Include="Resources\output-onlinepngtools%287%29.png" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\cnmv.jpg" />
+    <None Include="Resources\output-onlinepngtools%285%29.png" />
+    <None Include="Resources\output-onlinepngtools%283%29.png" />
+    <None Include="Resources\output-onlinepngtools%282%29.png" />
+    <None Include="Resources\output-onlinepngtools%281%29.png" />
+    <None Include="Resources\output-onlinepngtools1.png" />
+    <None Include="Resources\Webp.net-resizeimage.png" />
+    <None Include="Resources\output-onlinepngtools.png" />
+    <None Include="Resources\download.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

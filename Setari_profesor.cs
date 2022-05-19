@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace Catalog
 {
-    public partial class setari : Form
+    public partial class Setari_profesor : Form
     {
-        int verif=0;
-        public setari()
+        int verif = 0;
+        public Setari_profesor()
         {
             InitializeComponent();
             this.CenterToParent();
-            check.BackColor = Color.Gray;
             this.Select();
+            check.BackColor = Color.Gray;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -61,12 +61,12 @@ namespace Catalog
             check.Visible = true;
             finish.Visible = true;
             verif = 1;
+            check.BackColor = Color.Gray;
 
             //text
             label1.Text = "Username nou";
             label2.Text = "Confirmare username nou";
             titlu.Text = "Schimbare username";
-            check.BackColor = Color.Gray;
         }
 
         private void schimba_parola_Click(object sender, EventArgs e)
@@ -102,9 +102,9 @@ namespace Catalog
                     if (check.BackColor == Color.Green)
                     {
                         global.nume_nou = tx1.Text;
-                        if (Server.verif_username_elev() == 0)
+                        if (Server.verif_username_profesor() == 0)
                         {
-                            Server.schimbare_user_elev();
+                            Server.schimbare_user_profesor();
 
                             //Visibilitate
                             schimba_parola.Visible = true;
@@ -147,7 +147,7 @@ namespace Catalog
                     if (check.BackColor == Color.Green)
                     {
                         global.parola_noua = tx1.Text;
-                        Server.schimbare_parola_elev();
+                        Server.schimbare_parola_profesor();
 
                         //Visibilitate
                         schimba_parola.Visible = true;
@@ -187,4 +187,5 @@ namespace Catalog
             else check.BackColor = Color.Red;
         }
     }
-}
+    }
+

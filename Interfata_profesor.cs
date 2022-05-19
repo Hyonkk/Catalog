@@ -16,17 +16,36 @@ namespace Catalog
         {
             InitializeComponent();
             creare_nume();
-            Back.SendToBack();
+            this.CenterToScreen();
         }
 
         private void creare_nume()
         {
-            eticheta_nume.Text = global.nume_curent;
+            eticheta_nume.Text = global.nume_default;
         }
 
-        private void Back_Click(object sender, EventArgs e)
+        private void setari_Click(object sender, EventArgs e)
         {
+            Setari_profesor f = new Setari_profesor();
+            f.Show();
+        }
 
+        private void logout_Click(object sender, EventArgs e)
+        {
+            global.F_curent = new login();
+            this.Hide();
+            global.F_curent.ShowDialog();
+            this.Close();
+            global.ctr_log = 0;
+        }
+
+        private void catalog_Click(object sender, EventArgs e)
+        {
+            global.F_curent = new catalog();
+            this.Hide();
+            global.F_curent.ShowDialog();
+            this.Close();
+            global.ctr_log = 0;
         }
     }
 }

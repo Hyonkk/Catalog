@@ -10,7 +10,6 @@ namespace Catalog
     static class global
     {
         public static Form F_curent;
-        public static Form F_anterior;
         public static int ctr_log;
         public static string parola_curenta;
         public static string parola_noua;
