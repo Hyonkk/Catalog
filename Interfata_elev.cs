@@ -38,7 +38,7 @@ namespace Catalog
             setari.BackColor = Color.LightSkyBlue;
 
             //nume
-            eticheta_nume.Text=global.nume_curent.ToString();
+            eticheta_nume.Text = global.nume_default;
             eticheta_nume.Location = new Point(30, 50);
             eticheta_nume.FlatStyle = FlatStyle.Flat;
             //eticheta_nume.Size = new Size(300, 50);

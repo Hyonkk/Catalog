@@ -227,7 +227,6 @@ namespace Catalog
                 {
                     if (check.BackColor == Color.Green)
                     {
-                        ter_elev.eticheta_nume.Text = schimbare_nume.Text;
                         global.nume_nou = schimbare_nume.Text;
                         if (Server.verif_username_elev() == 0)
                         {

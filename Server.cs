@@ -26,7 +26,9 @@ namespace Catalog
                 cmd.Parameters.Add("@Parola", SqlDbType.VarChar, 50).Value = global.parola_curenta;
 
                 SqlParameter retval = cmd.Parameters.Add("@exist", SqlDbType.Int);
+                SqlParameter retval1 = cmd.Parameters.Add("@nume_default", SqlDbType.VarChar,50);
                 retval.Direction = ParameterDirection.Output;
+                retval1.Direction = ParameterDirection.Output;
 
                 cmd.ExecuteNonQuery();
                                 
@@ -34,6 +36,7 @@ namespace Catalog
                 if (returnvalue == 1)
                 {
                     ctr = 1;
+                    global.nume_default = Convert.ToString(cmd.Parameters["@nume_default"].Value);
                 }
                 else ctr = 0;
                 sqlCon.Close();

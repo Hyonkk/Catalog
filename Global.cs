@@ -16,5 +16,6 @@ namespace Catalog
         public static string parola_noua;
         public static string nume_curent;
         public static string nume_nou;
+        public static string nume_default;
     }
 }
