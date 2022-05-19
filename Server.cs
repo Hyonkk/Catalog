@@ -80,7 +80,8 @@ namespace Catalog
                 SqlCommand cmd = new SqlCommand("ElevDefault", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.Add("Nume", SqlDbType.VarChar, 50).Value = global.nume_nou;
+                cmd.Parameters.Add("nume", SqlDbType.VarChar, 50).Value = global.nume_nou;
+                cmd.Parameters.Add("nume_curent", SqlDbType.VarChar, 50).Value = global.nume_curent;
 
                 SqlParameter retval = cmd.Parameters.Add("@out", SqlDbType.Int);
                 retval.Direction = ParameterDirection.Output;
