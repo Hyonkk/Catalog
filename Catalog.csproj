@@ -51,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfata_elev.cs">
       <SubType>Form</SubType>
     </Compile>

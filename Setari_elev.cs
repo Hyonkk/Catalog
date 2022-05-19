@@ -199,6 +199,7 @@ namespace Catalog
 
         private void finish_Click(object sender, EventArgs e)
         {
+            /*
             //Visibilitate
             schimba_parola.Visible = true;
             schimba_user.Visible = true;
@@ -214,21 +215,53 @@ namespace Catalog
             tx2.Visible = false;
             check.Visible = false;
 
-
+            */
 
             //check.BackColor = Color.Gray;
 
             //schimbare in database
 
             if (verif == 1)
-            {            
+            {
                 if (check.BackColor == Color.Green)
                 {
                     ter_elev.eticheta_nume.Text = schimbare_nume.Text;
                     global.nume_nou = schimbare_nume.Text;
-                    Server.schimbare_user_elev();
+                    if (Server.verif_username_elev() == 0)
+                    {
+                        Server.schimbare_user_elev();
+
+                        //Visibilitate
+                        schimba_parola.Visible = true;
+                        schimba_user.Visible = true;
+                        schimbare_nume.Visible = false;
+                        schimbare_nume_conf.Visible = false;
+                        schimbare_parola.Visible = false;
+                        schimbare_parola_conf.Visible = false;
+                        inapoi.Visible = false;
+                        finish.Visible = false;
+                        exit.Visible = true;
+                        titlu.Visible = false;
+                        tx1.Visible = false;
+                        tx2.Visible = false;
+                        check.Visible = false;
+
+                        //resetare textbox user
+                        schimbare_nume.Text = "";
+                        schimbare_nume_conf.Text = "";
+                    }
+                    else 
+                    {
+                        MessageBox.Show("Nume introdus este luat! Alegeti alt nume!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        //resetare textbox user
+                        schimbare_nume.Text = "";
+                        schimbare_nume_conf.Text = "";
+                    }
+
+
                 }
-                else MessageBox.Show("Numele introduse nu coincid", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("Numele introduse nu coincid!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -236,15 +269,35 @@ namespace Catalog
                 {
                     global.parola_noua = schimbare_parola.Text;
                     Server.schimbare_parola_elev();
+
+                    //Visibilitate
+                    schimba_parola.Visible = true;
+                    schimba_user.Visible = true;
+                    schimbare_nume.Visible = false;
+                    schimbare_nume_conf.Visible = false;
+                    schimbare_parola.Visible = false;
+                    schimbare_parola_conf.Visible = false;
+                    inapoi.Visible = false;
+                    finish.Visible = false;
+                    exit.Visible = true;
+                    titlu.Visible = false;
+                    tx1.Visible = false;
+                    tx2.Visible = false;
+                    check.Visible = false;
+
+                    //resetare textbox parola
+                    schimbare_parola.Text = "";
+                    schimbare_parola_conf.Text = "";
                 }
-                else MessageBox.Show("Parolele introduse nu coincid", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }            
-            
-            //resetare textbox uri
-            schimbare_nume.Text = "";
-            schimbare_nume_conf.Text = "";
-            schimbare_parola.Text = "";
-            schimbare_parola_conf.Text = "";
+                else
+                {
+                    MessageBox.Show("Parolele introduse nu coincid!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    //resetare textbox parola
+                    schimbare_parola.Text = "";
+                    schimbare_parola_conf.Text = "";
+                }
+            }
         }
 
         private void schimba_user_Click(object sender, EventArgs e)

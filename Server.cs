@@ -44,7 +44,6 @@ namespace Catalog
         {
             using(SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                Console.WriteLine(global.nume_nou);
                 sqlCon.Open();
                 SqlCommand cmd = new SqlCommand("SchimbareUsernameElev",sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -61,7 +60,6 @@ namespace Catalog
         {
             using (SqlConnection sqlCon = new SqlConnection(connectionString))
             {
-                Console.WriteLine(global.nume_nou);
                 sqlCon.Open();
                 SqlCommand cmd = new SqlCommand("SchimbareParolaElev", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -72,6 +70,30 @@ namespace Catalog
                 cmd.ExecuteNonQuery();
                 sqlCon.Close();
             }
+        }
+
+        public static int verif_username_elev()
+        {
+            using (SqlConnection sqlCon = new SqlConnection(connectionString))
+            {
+                sqlCon.Open();
+                SqlCommand cmd = new SqlCommand("ElevDefault", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("Nume", SqlDbType.VarChar, 50).Value = global.nume_nou;
+
+                SqlParameter retval = cmd.Parameters.Add("@out", SqlDbType.Int);
+                retval.Direction = ParameterDirection.Output;
+
+                cmd.ExecuteNonQuery();
+                
+                int rv = Convert.ToInt32(cmd.Parameters["@out"].Value);
+                Console.WriteLine(rv.ToString());
+
+                sqlCon.Close();
+                return rv;
+            }
+            
         }
     }
 }
