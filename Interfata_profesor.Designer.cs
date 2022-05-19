@@ -45,6 +45,7 @@
             this.eticheta_nume.Name = "eticheta_nume";
             this.eticheta_nume.Size = new System.Drawing.Size(157, 44);
             this.eticheta_nume.TabIndex = 0;
+            this.eticheta_nume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Clase
             // 
@@ -82,10 +83,11 @@
             // Back
             // 
             this.Back.BackColor = System.Drawing.Color.Turquoise;
-            this.Back.Location = new System.Drawing.Point(-2, 0);
+            this.Back.Location = new System.Drawing.Point(-3, -2);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(197, 564);
             this.Back.TabIndex = 0;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // ter_profesor
             // 

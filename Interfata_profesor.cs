@@ -23,5 +23,10 @@ namespace Catalog
         {
             eticheta_nume.Text = global.nume_curent;
         }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
