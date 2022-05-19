@@ -102,18 +102,29 @@ namespace Catalog
         {
             global.nume_curent = username.Text;
             global.parola_curenta = password.Text;
-            Server.conectare();
-            if (Server.ctr == 1)
+            if (global.ctr_log == 1)
             {
-                global.F_curent = new ter_elev();
-                this.Hide();
-                global.F_curent.ShowDialog();
-                this.Close();
+                Server.conectare();
+                if (Server.ctr == 1)
+                {
+                    global.F_curent = new ter_elev();
+                    this.Hide();
+                    global.F_curent.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    string mb = "Nu ai introdus numele sau parola corecta!" + '\n' + "Reincearca!";
+                    MessageBox.Show(mb, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             else
             {
-                string mb = "Nu ai introdus numele sau parola corecta!" + '\n' + "Reincearca!";
-                MessageBox.Show(mb, "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                global.F_curent = new ter_profesor();
+                this.Hide();
+                global.F_curent.ShowDialog();
+                this.Close();
             }
         }
 
