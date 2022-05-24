@@ -28,8 +28,10 @@ namespace Catalog
 
                 SqlParameter retval = cmd.Parameters.Add("@exist", SqlDbType.Int);
                 SqlParameter retval1 = cmd.Parameters.Add("@nume_default", SqlDbType.VarChar,50);
+                SqlParameter retval2 = cmd.Parameters.Add("@clasa", SqlDbType.VarChar, 50);
                 retval.Direction = ParameterDirection.Output;
                 retval1.Direction = ParameterDirection.Output;
+                retval2.Direction = ParameterDirection.Output;
 
                 cmd.ExecuteNonQuery();
                                 
@@ -38,6 +40,7 @@ namespace Catalog
                 {
                     ctr = 1;
                     global.nume_default = Convert.ToString(cmd.Parameters["@nume_default"].Value);
+                    global.clasa_curenta = Convert.ToString(cmd.Parameters["@clasa"].Value);
                 }
                 else ctr = 0;
                 sqlCon.Close();

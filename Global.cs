@@ -17,5 +17,6 @@ namespace Catalog
         public static string nume_nou;
         public static string nume_default;
         public static string materie_curenta_elev;
+        public static string clasa_curenta;
     }
 }
