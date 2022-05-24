@@ -146,22 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NewFile1.txt" />
-    <None Include="Resources\output-onlinepngtools %2814%29.png" />
-    <None Include="Resources\output-onlinepngtools %2813%29.png" />
-    <None Include="Resources\output-onlinepngtools %2812%29.png" />
-    <None Include="Resources\output-onlinepngtools %2811%29.png" />
-    <None Include="Resources\output-onlinepngtools %2810%29.png" />
-    <None Include="Resources\output-onlinepngtools %289%29.png" />
-    <None Include="Resources\output-onlinepngtools %288%29.png" />
-    <None Include="Resources\output-onlinepngtools %287%29.png" />
-    <None Include="Resources\output-onlinepngtools %286%29.png" />
-    <None Include="Resources\output-onlinepngtools %285%29.png" />
-    <None Include="Resources\output-onlinepngtools %284%29.png" />
-    <None Include="Resources\output-onlinepngtools %283%291.png" />
-    <None Include="Resources\output-onlinepngtools %283%29.png" />
-    <None Include="Resources\output-onlinepngtools %282%29.png" />
-    <None Include="Resources\output-onlinepngtools %281%291.png" />
-    <None Include="Resources\output-onlinepngtools %281%29.png" />
+    <None Include="Resources\output-onlinepngtools %2815%29.png" />
     <None Include="Resources\pattern21.png" />
     <None Include="Resources\pattern2.png" />
     <None Include="Resources\output-onlinepngtools%2818%29.png" />

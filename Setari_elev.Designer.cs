@@ -40,14 +40,16 @@
             this.schimba_username = new System.Windows.Forms.Button();
             this.inapoi = new System.Windows.Forms.Button();
             this.titlu = new System.Windows.Forms.Label();
+            this.vezi1 = new System.Windows.Forms.Label();
+            this.vezi2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // check
             // 
-            this.check.Location = new System.Drawing.Point(655, 338);
+            this.check.Location = new System.Drawing.Point(485, 285);
             this.check.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.check.Name = "check";
-            this.check.Size = new System.Drawing.Size(24, 22);
+            this.check.Size = new System.Drawing.Size(20, 20);
             this.check.TabIndex = 23;
             this.check.Visible = false;
             // 
@@ -58,10 +60,9 @@
             this.finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finish.ForeColor = System.Drawing.SystemColors.Control;
-            this.finish.Location = new System.Drawing.Point(507, 455);
-            this.finish.Margin = new System.Windows.Forms.Padding(4);
+            this.finish.Location = new System.Drawing.Point(385, 362);
             this.finish.Name = "finish";
-            this.finish.Size = new System.Drawing.Size(168, 86);
+            this.finish.Size = new System.Drawing.Size(134, 69);
             this.finish.TabIndex = 22;
             this.finish.TabStop = false;
             this.finish.Text = "Confirmare";
@@ -72,10 +73,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 252);
+            this.label1.Location = new System.Drawing.Point(11, 202);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 30);
+            this.label1.Size = new System.Drawing.Size(261, 24);
             this.label1.TabIndex = 19;
             this.label1.Text = "Parola noua";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,10 +85,10 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 309);
+            this.label2.Location = new System.Drawing.Point(11, 246);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 30);
+            this.label2.Size = new System.Drawing.Size(261, 24);
             this.label2.TabIndex = 18;
             this.label2.Text = "Confirmare parola noua";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,20 +96,22 @@
             // 
             // tx2
             // 
-            this.tx2.Location = new System.Drawing.Point(341, 315);
+            this.tx2.Location = new System.Drawing.Point(275, 250);
             this.tx2.Margin = new System.Windows.Forms.Padding(2);
             this.tx2.Name = "tx2";
-            this.tx2.Size = new System.Drawing.Size(306, 22);
+            this.tx2.PasswordChar = '*';
+            this.tx2.Size = new System.Drawing.Size(230, 20);
             this.tx2.TabIndex = 17;
             this.tx2.Visible = false;
             this.tx2.TextChanged += new System.EventHandler(this.tx2_TextChanged);
             // 
             // tx1
             // 
-            this.tx1.Location = new System.Drawing.Point(341, 261);
+            this.tx1.Location = new System.Drawing.Point(275, 206);
             this.tx1.Margin = new System.Windows.Forms.Padding(2);
             this.tx1.Name = "tx1";
-            this.tx1.Size = new System.Drawing.Size(306, 22);
+            this.tx1.PasswordChar = '*';
+            this.tx1.Size = new System.Drawing.Size(230, 20);
             this.tx1.TabIndex = 16;
             this.tx1.Visible = false;
             this.tx1.TextChanged += new System.EventHandler(this.tx2_TextChanged);
@@ -120,15 +123,14 @@
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exit.ForeColor = System.Drawing.SystemColors.Control;
-            this.exit.Location = new System.Drawing.Point(305, 455);
-            this.exit.Margin = new System.Windows.Forms.Padding(4);
+            this.exit.Location = new System.Drawing.Point(245, 362);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(168, 86);
+            this.exit.Size = new System.Drawing.Size(134, 69);
             this.exit.TabIndex = 15;
             this.exit.TabStop = false;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = false;
-            this.exit.Click += new System.EventHandler(this.button3_Click);
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // schimba_parola
             // 
@@ -137,10 +139,9 @@
             this.schimba_parola.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.schimba_parola.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schimba_parola.ForeColor = System.Drawing.SystemColors.Control;
-            this.schimba_parola.Location = new System.Drawing.Point(479, 88);
-            this.schimba_parola.Margin = new System.Windows.Forms.Padding(4);
+            this.schimba_parola.Location = new System.Drawing.Point(386, 68);
             this.schimba_parola.Name = "schimba_parola";
-            this.schimba_parola.Size = new System.Drawing.Size(195, 99);
+            this.schimba_parola.Size = new System.Drawing.Size(156, 79);
             this.schimba_parola.TabIndex = 14;
             this.schimba_parola.TabStop = false;
             this.schimba_parola.Text = "Schimba parola";
@@ -154,10 +155,9 @@
             this.schimba_username.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.schimba_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schimba_username.ForeColor = System.Drawing.SystemColors.Control;
-            this.schimba_username.Location = new System.Drawing.Point(101, 88);
-            this.schimba_username.Margin = new System.Windows.Forms.Padding(4);
+            this.schimba_username.Location = new System.Drawing.Point(83, 68);
             this.schimba_username.Name = "schimba_username";
-            this.schimba_username.Size = new System.Drawing.Size(195, 99);
+            this.schimba_username.Size = new System.Drawing.Size(156, 79);
             this.schimba_username.TabIndex = 13;
             this.schimba_username.TabStop = false;
             this.schimba_username.Text = "Schimba username-ul";
@@ -171,35 +171,59 @@
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inapoi.ForeColor = System.Drawing.SystemColors.Control;
-            this.inapoi.Location = new System.Drawing.Point(305, 455);
-            this.inapoi.Margin = new System.Windows.Forms.Padding(4);
+            this.inapoi.Location = new System.Drawing.Point(105, 362);
             this.inapoi.Name = "inapoi";
-            this.inapoi.Size = new System.Drawing.Size(168, 86);
+            this.inapoi.Size = new System.Drawing.Size(134, 69);
             this.inapoi.TabIndex = 20;
             this.inapoi.TabStop = false;
             this.inapoi.Text = "Inapoi";
             this.inapoi.UseVisualStyleBackColor = false;
             this.inapoi.Visible = false;
-            this.inapoi.Click += new System.EventHandler(this.button4_Click);
+            this.inapoi.Click += new System.EventHandler(this.inapoi_Click);
             // 
             // titlu
             // 
             this.titlu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titlu.Location = new System.Drawing.Point(9, 12);
+            this.titlu.Location = new System.Drawing.Point(0, 0);
             this.titlu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.titlu.Name = "titlu";
-            this.titlu.Size = new System.Drawing.Size(764, 175);
+            this.titlu.Size = new System.Drawing.Size(625, 148);
             this.titlu.TabIndex = 21;
             this.titlu.Text = "Parola noua";
             this.titlu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.titlu.Visible = false;
             // 
+            // vezi1
+            // 
+            this.vezi1.BackColor = System.Drawing.Color.Gray;
+            this.vezi1.Image = global::Catalog.Properties.Resources.output_onlinepngtools__15_;
+            this.vezi1.Location = new System.Drawing.Point(526, 206);
+            this.vezi1.Name = "vezi1";
+            this.vezi1.Size = new System.Drawing.Size(20, 20);
+            this.vezi1.TabIndex = 24;
+            this.vezi1.Visible = false;
+            this.vezi1.Click += new System.EventHandler(this.vezi1_Click);
+            // 
+            // vezi2
+            // 
+            this.vezi2.BackColor = System.Drawing.Color.Gray;
+            this.vezi2.Image = global::Catalog.Properties.Resources.output_onlinepngtools__15_;
+            this.vezi2.Location = new System.Drawing.Point(526, 250);
+            this.vezi2.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.vezi2.Name = "vezi2";
+            this.vezi2.Size = new System.Drawing.Size(20, 20);
+            this.vezi2.TabIndex = 25;
+            this.vezi2.Visible = false;
+            this.vezi2.Click += new System.EventHandler(this.vezi2_Click);
+            // 
             // setari
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(625, 442);
+            this.Controls.Add(this.vezi2);
+            this.Controls.Add(this.vezi1);
             this.Controls.Add(this.check);
             this.Controls.Add(this.finish);
             this.Controls.Add(this.label1);
@@ -213,6 +237,7 @@
             this.Controls.Add(this.titlu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "setari";
             this.Text = "Setari";
@@ -234,5 +259,7 @@
         private System.Windows.Forms.Button schimba_username;
         private System.Windows.Forms.Button inapoi;
         private System.Windows.Forms.Label titlu;
+        private System.Windows.Forms.Label vezi1;
+        private System.Windows.Forms.Label vezi2;
     }
 }

@@ -21,12 +21,12 @@ namespace Catalog
             check.BackColor = Color.Gray;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void inapoi_Click(object sender, EventArgs e)
         {
             //visible
             schimba_username.Visible = true;
@@ -43,6 +43,9 @@ namespace Catalog
             tx2.Text = "";
             finish.Visible = false;
             check.BackColor = Color.Gray;
+            vezi1.Visible = false;
+            vezi2.Visible = false;
+            vezi1.BackColor = vezi2.BackColor = Color.Gray;
 
         }
 
@@ -62,6 +65,8 @@ namespace Catalog
             finish.Visible = true;
             verif = 1;
             check.BackColor = Color.Gray;
+            vezi1.Visible = vezi2.Visible = true;
+            vezi1.BackColor = vezi2.BackColor = Color.Gray;
 
             //text
             label1.Text = "Username nou";
@@ -84,6 +89,8 @@ namespace Catalog
             check.Visible = true;
             finish.Visible = true;
             verif = 2;
+            vezi1.Visible = vezi2.Visible = true;
+            vezi1.BackColor = vezi2.BackColor = Color.Gray;
 
             //text
             label1.Text = "Parola noua";
@@ -120,6 +127,8 @@ namespace Catalog
                             label2.Visible = false;
                             finish.Visible = false;
                             check.BackColor = Color.Gray;
+                            vezi1.Visible = vezi2.Visible = false;
+                            vezi1.BackColor = vezi2.BackColor = Color.Gray;
 
                             //resetare textbox user
                             tx1.Text = "";
@@ -163,6 +172,8 @@ namespace Catalog
                         label2.Visible = false;
                         finish.Visible = false;
                         check.BackColor = Color.Gray;
+                        vezi1.Visible = vezi2.Visible = false;
+                        vezi1.BackColor = vezi2.BackColor = Color.Gray;
 
                         //resetare textbox parola
                         tx1.Text = "";
@@ -183,9 +194,40 @@ namespace Catalog
 
         private void tx2_TextChanged(object sender, EventArgs e)
         {
-            if (String.Equals(tx1.Text, tx2.Text)) check.BackColor = Color.Green;
-            else check.BackColor = Color.Red;
+            if (tx1.Text == "") check.BackColor = Color.Red;
+            else
+            {
+                if (String.Equals(tx1.Text, tx2.Text)) check.BackColor = Color.Green;
+                else check.BackColor = Color.Red;
+            }
+        }
+
+        private void vezi1_Click(object sender, EventArgs e)
+        {
+            if (vezi1.BackColor == Color.Gray)
+            {
+                vezi1.BackColor = Color.Blue;
+                tx1.PasswordChar = '\0';
+            }
+            else
+            {
+                vezi1.BackColor = Color.Gray;
+                tx1.PasswordChar = '*';
+            }
+        }
+
+        private void vezi2_Click(object sender, EventArgs e)
+        {
+            if (vezi2.BackColor == Color.Gray)
+            {
+                vezi2.BackColor = Color.Blue;
+                tx2.PasswordChar = '\0';
+            }
+            else
+            {
+                vezi2.BackColor = Color.Gray;
+                tx2.PasswordChar = '*';
+            }
         }
     }
     }
-

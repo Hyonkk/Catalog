@@ -50,6 +50,7 @@
             // 
             // eticheta_nume
             // 
+            this.eticheta_nume.AutoSize = true;
             this.eticheta_nume.BackColor = System.Drawing.Color.RoyalBlue;
             this.eticheta_nume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.eticheta_nume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -59,7 +60,7 @@
             this.eticheta_nume.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eticheta_nume.Location = new System.Drawing.Point(12, 9);
             this.eticheta_nume.MaximumSize = new System.Drawing.Size(200, 813);
-            this.eticheta_nume.MinimumSize = new System.Drawing.Size(200, 2);
+            this.eticheta_nume.MinimumSize = new System.Drawing.Size(200, 116);
             this.eticheta_nume.Name = "eticheta_nume";
             this.eticheta_nume.Size = new System.Drawing.Size(200, 116);
             this.eticheta_nume.TabIndex = 14;
@@ -152,6 +153,7 @@
             this.Text = "Terminal profesor";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
