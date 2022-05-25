@@ -48,7 +48,7 @@ namespace Catalog
                     global.F_curent = new ter_elev();
                     this.Hide();
                     global.F_curent.ShowDialog();
-                    //this.Close();
+                    this.Close();
                 }
                 else
                 { 

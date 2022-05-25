@@ -169,13 +169,14 @@ namespace Catalog
 
         public static void combobox_materii()
         {
+            CB_materii = new ComboBox();
                 SqlCommand cmd = new SqlCommand("select distinct d.denumire from Discipline d", sqlCon);
                 SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sqlDa.Fill(dt);
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    CB_materii.Items.Add(dt.Rows[i]["denumire"].ToString());
+                CB_materii.Items.Add((dt.Rows[i]["denumire"].ToString()));
                 }
             
             CB_materii.Items.Add("Toate");
