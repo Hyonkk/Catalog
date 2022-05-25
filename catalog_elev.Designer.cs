@@ -38,8 +38,6 @@
             this.data_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inapoi = new System.Windows.Forms.Button();
-            this.afis_note = new System.Windows.Forms.Button();
-            this.afis_absente = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,13 +61,15 @@
             // 
             // CB_materii
             // 
+            this.CB_materii.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_materii.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_materii.FormattingEnabled = true;
             this.CB_materii.Location = new System.Drawing.Point(11, 10);
             this.CB_materii.Margin = new System.Windows.Forms.Padding(2);
             this.CB_materii.Name = "CB_materii";
-            this.CB_materii.Size = new System.Drawing.Size(429, 28);
+            this.CB_materii.Size = new System.Drawing.Size(475, 28);
             this.CB_materii.TabIndex = 0;
+            this.CB_materii.TabStop = false;
             this.CB_materii.SelectedIndexChanged += new System.EventHandler(this.CB_materii_SelectedIndexChanged);
             // 
             // dataGridView1
@@ -89,7 +89,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(429, 256);
+            this.dataGridView1.Size = new System.Drawing.Size(475, 256);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -117,43 +117,15 @@
             this.inapoi.BackColor = System.Drawing.Color.CornflowerBlue;
             this.inapoi.FlatAppearance.BorderSize = 0;
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inapoi.Location = new System.Drawing.Point(721, 10);
+            this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.inapoi.Location = new System.Drawing.Point(634, 10);
             this.inapoi.Name = "inapoi";
-            this.inapoi.Size = new System.Drawing.Size(123, 56);
+            this.inapoi.Size = new System.Drawing.Size(202, 56);
             this.inapoi.TabIndex = 10;
             this.inapoi.TabStop = false;
             this.inapoi.Text = "Inapoi la terminal";
             this.inapoi.UseVisualStyleBackColor = false;
             this.inapoi.Click += new System.EventHandler(this.inapoi_Click);
-            // 
-            // afis_note
-            // 
-            this.afis_note.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.afis_note.FlatAppearance.BorderSize = 0;
-            this.afis_note.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.afis_note.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afis_note.Location = new System.Drawing.Point(463, 10);
-            this.afis_note.Name = "afis_note";
-            this.afis_note.Size = new System.Drawing.Size(123, 56);
-            this.afis_note.TabIndex = 11;
-            this.afis_note.TabStop = false;
-            this.afis_note.Text = "Afiseaza note";
-            this.afis_note.UseVisualStyleBackColor = false;
-            // 
-            // afis_absente
-            // 
-            this.afis_absente.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.afis_absente.FlatAppearance.BorderSize = 0;
-            this.afis_absente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.afis_absente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afis_absente.Location = new System.Drawing.Point(592, 10);
-            this.afis_absente.Name = "afis_absente";
-            this.afis_absente.Size = new System.Drawing.Size(123, 56);
-            this.afis_absente.TabIndex = 12;
-            this.afis_absente.TabStop = false;
-            this.afis_absente.Text = "Afiseaza absentele";
-            this.afis_absente.UseVisualStyleBackColor = false;
             // 
             // dataGridView2
             // 
@@ -166,14 +138,14 @@
             this.data_absente,
             this.absenta_absente,
             this.motivat_absente});
-            this.dataGridView2.Location = new System.Drawing.Point(446, 71);
+            this.dataGridView2.Location = new System.Drawing.Point(498, 71);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(429, 256);
+            this.dataGridView2.Size = new System.Drawing.Size(475, 256);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.TabStop = false;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
@@ -242,7 +214,7 @@
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(429, 256);
+            this.dataGridView3.Size = new System.Drawing.Size(475, 256);
             this.dataGridView3.TabIndex = 16;
             this.dataGridView3.TabStop = false;
             this.dataGridView3.Visible = false;
@@ -285,14 +257,14 @@
             this.data_absente_total,
             this.absenta_absente_total,
             this.motivat_absente_total});
-            this.dataGridView4.Location = new System.Drawing.Point(446, 71);
+            this.dataGridView4.Location = new System.Drawing.Point(498, 71);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(429, 256);
+            this.dataGridView4.Size = new System.Drawing.Size(475, 256);
             this.dataGridView4.TabIndex = 17;
             this.dataGridView4.TabStop = false;
             this.dataGridView4.Visible = false;
@@ -333,11 +305,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(886, 687);
+            this.ClientSize = new System.Drawing.Size(984, 687);
             this.Controls.Add(this.medie);
             this.Controls.Add(this.afis_media);
-            this.Controls.Add(this.afis_absente);
-            this.Controls.Add(this.afis_note);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CB_materii);
@@ -363,8 +333,6 @@
         public System.Windows.Forms.ComboBox CB_materii;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Button inapoi;
-        public System.Windows.Forms.Button afis_note;
-        public System.Windows.Forms.Button afis_absente;
         public System.Windows.Forms.DataGridView dataGridView2;
         public System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
         public System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;

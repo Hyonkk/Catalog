@@ -59,6 +59,7 @@ namespace Catalog
 
         private void CB_materii_SelectedIndexChanged(object sender, EventArgs e)
         {
+            inapoi.Focus();
             medie.Text = "";
             global.materie_curenta_elev = CB_materii.Text;
             if (String.Equals(global.materie_curenta_elev, "Toate"))
