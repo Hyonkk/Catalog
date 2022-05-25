@@ -14,6 +14,7 @@ namespace Catalog
         [STAThread]
         static void Main()
         {
+            Server.sqlCon.Open();
             if (Environment.OSVersion.Version.Major >= 6)SetProcessDPIAware();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

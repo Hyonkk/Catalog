@@ -13,94 +13,14 @@ namespace Catalog
 {
     public partial class catalog : Form
     {
+        int ctr;
         public catalog()
         {
+            global.F_curent = this;
             InitializeComponent();
             this.CenterToScreen();
-            combobox_materii();
-        }
-
-        private void combobox_materii()
-        {
-            using(SqlConnection sqlCon = new SqlConnection(Server.connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("select distinct d.denumire from Discipline d",sqlCon);
-                SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sqlDa.Fill(dt);
-                for(int i = 0; i < dt.Rows.Count; i++)
-                {
-                    CB_materii.Items.Add(dt.Rows[i]["denumire"].ToString());
-                }
-            }
-            CB_materii.Items.Add("Toate");
-        }
-
-        private void afis_note_()
-        {
-            dataGridView1.Rows.Clear();
-            using (SqlConnection sqlCon = new SqlConnection(Server.connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("AfisNote", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@materia", SqlDbType.VarChar, 50).Value = global.materie_curenta_elev;
-                cmd.Parameters.Add("@elev", SqlDbType.VarChar, 50).Value = global.nume_default;
-                SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sqlDa.Fill(dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                        int rowId = dataGridView1.Rows.Add();
-                        DataGridViewRow row = dataGridView1.Rows[rowId];
-                        string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
-                        row.Cells["data_note"].Value = data_corecta;
-                        row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
-
-                }
-            }
-        }
-
-        private void afis_absente_()
-        {
-            dataGridView2.Rows.Clear();
-            using (SqlConnection sqlCon = new SqlConnection(Server.connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("AfisAbsente", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@materia", SqlDbType.VarChar, 50).Value = global.materie_curenta_elev;
-                cmd.Parameters.Add("@elev", SqlDbType.VarChar, 50).Value = global.nume_default;
-                SqlDataAdapter sqlDa1 = new SqlDataAdapter(cmd);
-                DataTable dt1 = new DataTable();
-                sqlDa1.Fill(dt1);
-                for (int i = 0; i < dt1.Rows.Count; i++)
-                {
-                        int rowId = dataGridView2.Rows.Add();
-                        DataGridViewRow row = dataGridView2.Rows[rowId];
-                        string data_corecta = dt1.Rows[i]["data"].ToString().Substring(0, dt1.Rows[i]["data"].ToString().IndexOf(" "));
-                        row.Cells["data_absente"].Value = data_corecta;
-                        row.Cells["absenta_absente"].Value = dt1.Rows[i]["absente"].ToString();
-                        row.Cells["motivat_absente"].Value = dt1.Rows[i]["motivat"].ToString();
-                }
-            }
-        }
-
-        private void calc_media()
-        {
-            using (SqlConnection sqlCon = new SqlConnection(Server.connectionString))
-            {
-                sqlCon.Open();
-                SqlCommand cmd = new SqlCommand("AfisMedie", sqlCon);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@materia", SqlDbType.VarChar, 50).Value = global.materie_curenta_elev;
-                cmd.Parameters.Add("@elev", SqlDbType.VarChar, 50).Value = global.nume_default;
-                SqlDataAdapter sqlDa2 = new SqlDataAdapter(cmd);
-                DataTable dt2 = new DataTable();
-                sqlDa2.Fill(dt2);
-                medie.Text = dt2.Rows[0]["Medie"].ToString();
-            }
+            Server.combobox_materii();
+            CB_materii = Server.CB_materii;
         }
 
         private void inapoi_Click(object sender, EventArgs e)
@@ -114,13 +34,30 @@ namespace Catalog
         private void afis_note_Click(object sender, EventArgs e)
         {
             global.materie_curenta_elev = CB_materii.Text;
-            afis_note_();
+            if(String.Equals(global.materie_curenta_elev,"Toate"))
+            {
+                ctr = 1;
+                dataGridView1.Visible = false;
+                dataGridView3.Visible = true;
+                Server.afis_note_total_();
+                afis_media.Visible = false;
+                medie.Visible = false;
+            }
+            else
+            {
+                ctr = 2;
+                dataGridView1.Visible = true;
+                dataGridView3.Visible = false;
+                Server.afis_note_();
+                afis_media.Visible = true;
+                medie.Visible = true;
+            }
         }
 
         private void afis_absente_Click(object sender, EventArgs e)
         {
             global.materie_curenta_elev = CB_materii.Text;
-            afis_absente_();
+            Server.afis_absente_();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -135,7 +72,7 @@ namespace Catalog
 
         private void afis_media_Click(object sender, EventArgs e)
         {
-            calc_media();
+            Server.calc_media();
         }
     }
 }
