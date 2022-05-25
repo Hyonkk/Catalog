@@ -31,11 +31,6 @@ namespace Catalog
             f.Show();
         }
 
-        private void ter_elev_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void catalog_Click(object sender, EventArgs e)
         {
             global.F_curent = new catalog();

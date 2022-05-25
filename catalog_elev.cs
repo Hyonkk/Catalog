@@ -13,7 +13,6 @@ namespace Catalog
 {
     public partial class catalog : Form
     {
-        int ctr;
         public catalog()
         {
             global.F_curent = this;
@@ -64,13 +63,11 @@ namespace Catalog
             global.materie_curenta_elev = CB_materii.Text;
             if (String.Equals(global.materie_curenta_elev, "Toate"))
             {
-                ctr = 1;
 
                 dataGridView1.Visible = false;
                 dataGridView2.Visible = false;
                 dataGridView3.Visible = true;
                 dataGridView4.Visible = true;
-                afis_media.Visible = false;
                 medie.Visible = false;
 
                 Server.afis_note_total_();
@@ -102,14 +99,12 @@ namespace Catalog
             }
             else
             {
-                ctr = 2;
 
                 dataGridView1.Visible = true;
                 dataGridView2.Visible = true;
                 dataGridView3.Visible = false;
                 dataGridView4.Visible = false;
-                afis_media.Visible = true;
-                medie.Visible = true;
+                medie.Visible = false;
 
                 Server.afis_note_();
                 Server.afis_absente_();

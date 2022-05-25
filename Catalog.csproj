@@ -146,7 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NewFile1.txt" />
-    <None Include="Resources\output-onlinepngtools %2815%29.png" />
     <None Include="Resources\pattern21.png" />
     <None Include="Resources\pattern2.png" />
     <None Include="Resources\output-onlinepngtools%2818%29.png" />

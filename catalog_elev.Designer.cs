@@ -42,7 +42,6 @@
             this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.motivat_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.afis_media = new System.Windows.Forms.Button();
             this.medie = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.denumire_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,19 +173,6 @@
             this.motivat_absente.Name = "motivat_absente";
             this.motivat_absente.ReadOnly = true;
             // 
-            // afis_media
-            // 
-            this.afis_media.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.afis_media.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.afis_media.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afis_media.Location = new System.Drawing.Point(39, 416);
-            this.afis_media.Name = "afis_media";
-            this.afis_media.Size = new System.Drawing.Size(123, 56);
-            this.afis_media.TabIndex = 14;
-            this.afis_media.Text = "Calculeaza media";
-            this.afis_media.UseVisualStyleBackColor = false;
-            this.afis_media.Click += new System.EventHandler(this.afis_media_Click);
-            // 
             // medie
             // 
             this.medie.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -307,7 +293,6 @@
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(984, 687);
             this.Controls.Add(this.medie);
-            this.Controls.Add(this.afis_media);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CB_materii);
@@ -337,7 +322,6 @@
         public System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
         public System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
         public System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente;
-        public System.Windows.Forms.Button afis_media;
         public System.Windows.Forms.Label medie;
         public System.Windows.Forms.DataGridViewTextBoxColumn data_note;
         public System.Windows.Forms.DataGridViewTextBoxColumn nota_note;

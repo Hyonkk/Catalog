@@ -151,7 +151,6 @@
             this.MaximizeBox = false;
             this.Name = "ter_elev";
             this.Text = "Terminal Elev";
-            this.Load += new System.EventHandler(this.ter_elev_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
