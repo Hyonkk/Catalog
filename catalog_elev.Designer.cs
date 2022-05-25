@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(catalog));
             this.CB_materii = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -49,9 +50,15 @@
             this.denumire_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.denumire_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absenta_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivat_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // CB_materii
@@ -59,10 +66,11 @@
             this.CB_materii.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_materii.FormattingEnabled = true;
             this.CB_materii.Location = new System.Drawing.Point(11, 10);
-            this.CB_materii.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CB_materii.Margin = new System.Windows.Forms.Padding(2);
             this.CB_materii.Name = "CB_materii";
             this.CB_materii.Size = new System.Drawing.Size(429, 28);
             this.CB_materii.TabIndex = 0;
+            this.CB_materii.SelectedIndexChanged += new System.EventHandler(this.CB_materii_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -75,7 +83,7 @@
             this.data_note,
             this.nota_note});
             this.dataGridView1.Location = new System.Drawing.Point(11, 71);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
@@ -132,7 +140,6 @@
             this.afis_note.TabStop = false;
             this.afis_note.Text = "Afiseaza note";
             this.afis_note.UseVisualStyleBackColor = false;
-            this.afis_note.Click += new System.EventHandler(this.afis_note_Click);
             // 
             // afis_absente
             // 
@@ -147,7 +154,6 @@
             this.afis_absente.TabStop = false;
             this.afis_absente.Text = "Afiseaza absentele";
             this.afis_absente.UseVisualStyleBackColor = false;
-            this.afis_absente.Click += new System.EventHandler(this.afis_absente_Click);
             // 
             // dataGridView2
             // 
@@ -161,13 +167,13 @@
             this.absenta_absente,
             this.motivat_absente});
             this.dataGridView2.Location = new System.Drawing.Point(446, 71);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(429, 611);
+            this.dataGridView2.Size = new System.Drawing.Size(429, 256);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.TabStop = false;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
@@ -207,7 +213,6 @@
             this.afis_media.TabIndex = 14;
             this.afis_media.Text = "Calculeaza media";
             this.afis_media.UseVisualStyleBackColor = false;
-            this.afis_media.Visible = false;
             this.afis_media.Click += new System.EventHandler(this.afis_media_Click);
             // 
             // medie
@@ -218,7 +223,6 @@
             this.medie.Size = new System.Drawing.Size(123, 56);
             this.medie.TabIndex = 15;
             this.medie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.medie.Visible = false;
             // 
             // dataGridView3
             // 
@@ -232,7 +236,7 @@
             this.data_note_total,
             this.nota_note_total});
             this.dataGridView3.Location = new System.Drawing.Point(11, 71);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersVisible = false;
@@ -242,6 +246,7 @@
             this.dataGridView3.TabIndex = 16;
             this.dataGridView3.TabStop = false;
             this.dataGridView3.Visible = false;
+            this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
             // 
             // denumire_note_total
             // 
@@ -268,6 +273,61 @@
             this.nota_note_total.Name = "nota_note_total";
             this.nota_note_total.ReadOnly = true;
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.denumire_absente_total,
+            this.data_absente_total,
+            this.absenta_absente_total,
+            this.motivat_absente_total});
+            this.dataGridView4.Location = new System.Drawing.Point(446, 71);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.RowTemplate.Height = 24;
+            this.dataGridView4.Size = new System.Drawing.Size(429, 256);
+            this.dataGridView4.TabIndex = 17;
+            this.dataGridView4.TabStop = false;
+            this.dataGridView4.Visible = false;
+            this.dataGridView4.SelectionChanged += new System.EventHandler(this.dataGridView4_SelectionChanged);
+            // 
+            // denumire_absente_total
+            // 
+            this.denumire_absente_total.HeaderText = "Disciplina";
+            this.denumire_absente_total.Name = "denumire_absente_total";
+            this.denumire_absente_total.ReadOnly = true;
+            // 
+            // data_absente_total
+            // 
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.data_absente_total.DefaultCellStyle = dataGridViewCellStyle4;
+            this.data_absente_total.HeaderText = "Data";
+            this.data_absente_total.MinimumWidth = 6;
+            this.data_absente_total.Name = "data_absente_total";
+            this.data_absente_total.ReadOnly = true;
+            // 
+            // absenta_absente_total
+            // 
+            this.absenta_absente_total.HeaderText = "Absente";
+            this.absenta_absente_total.MinimumWidth = 6;
+            this.absenta_absente_total.Name = "absenta_absente_total";
+            this.absenta_absente_total.ReadOnly = true;
+            // 
+            // motivat_absente_total
+            // 
+            this.motivat_absente_total.HeaderText = "Motivat";
+            this.motivat_absente_total.MinimumWidth = 6;
+            this.motivat_absente_total.Name = "motivat_absente_total";
+            this.motivat_absente_total.ReadOnly = true;
+            // 
             // catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,22 +336,24 @@
             this.ClientSize = new System.Drawing.Size(886, 687);
             this.Controls.Add(this.medie);
             this.Controls.Add(this.afis_media);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.afis_absente);
             this.Controls.Add(this.afis_note);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CB_materii);
             this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "catalog";
             this.Text = "Catalog ";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,5 +377,10 @@
         public System.Windows.Forms.DataGridViewTextBoxColumn denumire_note_total;
         public System.Windows.Forms.DataGridViewTextBoxColumn data_note_total;
         public System.Windows.Forms.DataGridViewTextBoxColumn nota_note_total;
+        public System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn denumire_absente_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_absente_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente_total;
     }
 }

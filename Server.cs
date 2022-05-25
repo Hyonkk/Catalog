@@ -170,20 +170,27 @@ namespace Catalog
         public static void combobox_materii()
         {
             CB_materii = new ComboBox();
-                SqlCommand cmd = new SqlCommand("select distinct d.denumire from Discipline d", sqlCon);
-                SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sqlDa.Fill(dt);
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                CB_materii.Items.Add((dt.Rows[i]["denumire"].ToString()));
-                }
-            
+            SqlCommand cmd = new SqlCommand("select distinct d.denumire from Discipline d", sqlCon);
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                CB_materii.Items.Add(dt.Rows[i]["denumire"].ToString());
+            }
             CB_materii.Items.Add("Toate");
         }
 
         public static void afis_note_()
         {
+            dataGridView1=new DataGridView();
+            DataGridViewTextBoxColumn data_note = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn nota_note = new DataGridViewTextBoxColumn();
+            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            data_note,
+            nota_note});            
+            data_note.Name = "data_note";
+            nota_note.Name = "nota_note";
             dataGridView1.Rows.Clear();
             {
                 SqlCommand cmd = new SqlCommand("AfisNote", sqlCon);
@@ -200,13 +207,23 @@ namespace Catalog
                     string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
                     row.Cells["data_note"].Value = data_corecta;
                     row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
-
                 }
             }
         }
 
         public static void afis_note_total_()
         {
+            dataGridView3 = new DataGridView();
+            DataGridViewTextBoxColumn denumire_note_total = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn data_note_total = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn nota_note_total = new DataGridViewTextBoxColumn();
+            dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            denumire_note_total,
+            data_note_total,
+            nota_note_total});
+            denumire_note_total.Name = "denumire_note_total";
+            data_note_total.Name = "data_note_total";
+            nota_note_total.Name = "nota_note_total";
             dataGridView3.Rows.Clear();
             {
                 SqlCommand cmd = new SqlCommand("AfisToateNotele", sqlCon);
@@ -230,6 +247,17 @@ namespace Catalog
 
         public static void afis_absente_()
         {
+            dataGridView2 = new DataGridView();
+            DataGridViewTextBoxColumn data_absente = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn absenta_absente = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn motivat_absente = new DataGridViewTextBoxColumn();
+            dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            data_absente,
+            absenta_absente,
+            motivat_absente});
+            data_absente.Name = "data_absente";
+            absenta_absente.Name = "absenta_absente";
+            motivat_absente.Name = "motivat_absente";
             dataGridView2.Rows.Clear();
             {
                 SqlCommand cmd = new SqlCommand("AfisAbsente", sqlCon);
@@ -251,8 +279,43 @@ namespace Catalog
             }
         }
 
+        public static void afis_absente_total_()
+        {
+            dataGridView4 = new DataGridView();
+            DataGridViewTextBoxColumn denumire_absente_total = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn data_absente_total = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn absenta_absente_total = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn motivat_absente_total = new DataGridViewTextBoxColumn();
+            dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            denumire_absente_total, data_absente_total, absenta_absente_total, motivat_absente_total });
+            denumire_absente_total.Name = "denumire_absente_total";
+            data_absente_total.Name = "data_absente_total";
+            absenta_absente_total.Name = "absenta_absente_total";
+            motivat_absente_total.Name = "motivat_absente_total";
+            dataGridView4.Rows.Clear();
+            {
+                SqlCommand cmd = new SqlCommand("AfisToateAbsentele", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@elev", SqlDbType.VarChar, 50).Value = global.nume_default;
+                SqlDataAdapter sqlDa1 = new SqlDataAdapter(cmd);
+                DataTable dt1 = new DataTable();
+                sqlDa1.Fill(dt1);
+                for (int i = 0; i < dt1.Rows.Count; i++)
+                {
+                    int rowId = dataGridView4.Rows.Add();
+                    DataGridViewRow row = dataGridView4.Rows[rowId];
+                    string data_corecta = dt1.Rows[i]["data"].ToString().Substring(0, dt1.Rows[i]["data"].ToString().IndexOf(" "));
+                    row.Cells["denumire_absente_total"].Value = dt1.Rows[i]["denumire"].ToString();
+                    row.Cells["data_absente_total"].Value = data_corecta;
+                    row.Cells["absenta_absente_total"].Value = dt1.Rows[i]["absente"].ToString();
+                    row.Cells["motivat_absente_total"].Value = dt1.Rows[i]["motivat"].ToString();
+                }
+            }
+        }
+
         public static void calc_media()
         {
+            medie = new Label();
             {
                 SqlCommand cmd = new SqlCommand("AfisMedie", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -283,5 +346,9 @@ namespace Catalog
         public static System.Windows.Forms.DataGridViewTextBoxColumn denumire_note_total;
         public static System.Windows.Forms.DataGridViewTextBoxColumn data_note_total;
         public static System.Windows.Forms.DataGridViewTextBoxColumn nota_note_total;
+        public static System.Windows.Forms.DataGridView dataGridView4;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn data_absente_total;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente_total;
+        public static System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente_total;
     }
 }
