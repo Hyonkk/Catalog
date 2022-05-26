@@ -329,26 +329,128 @@ namespace Catalog
             }
         }
 
-        public static System.Windows.Forms.ComboBox CB_materii;
-        public static System.Windows.Forms.DataGridView dataGridView1;
-        public static System.Windows.Forms.Button inapoi;
-        public static System.Windows.Forms.Button afis_note;
-        public static System.Windows.Forms.Button afis_absente;
-        public static System.Windows.Forms.DataGridView dataGridView2;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente;
-        public static System.Windows.Forms.Button afis_media;
-        public static System.Windows.Forms.Label medie;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn data_note;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
-        public static System.Windows.Forms.DataGridView dataGridView3;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn denumire_note_total;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn data_note_total;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn nota_note_total;
-        public static System.Windows.Forms.DataGridView dataGridView4;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn data_absente_total;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente_total;
-        public static System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente_total;
+        public static void get_clase()
+        {
+            CB_clase = new ComboBox();
+            SqlCommand cmd = new SqlCommand("GetClase", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                CB_clase.Items.Add(dt.Rows[i]["Clasa"].ToString());
+            }
+        }
+
+        public static void get_elevi_from_clase()
+        {
+            get_elvcls = new DataGridView();
+            nume_elev = new DataGridViewTextBoxColumn();
+            nume_elev.Name = "nume_elev";
+            get_elvcls.Columns.Add(nume_elev);
+            get_elvcls.Rows.Clear();
+            SqlCommand cmd = new SqlCommand("GetEleviFromClase",sqlCon);
+            cmd.CommandType=CommandType.StoredProcedure;
+            cmd.Parameters.Add("@clasa_input", SqlDbType.VarChar, 50).Value = global.clasa_input;
+            SqlDataAdapter cmdDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            cmdDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int rowId = get_elvcls.Rows.Add();
+                DataGridViewRow row = get_elvcls.Rows[rowId];
+                row.Cells["nume_elev"].Value = dt.Rows[i]["Nume_Default"].ToString();
+            }
+        }
+
+        public static void afis_note_profesori_()
+        {
+            dataGridView1 = new DataGridView();
+            DataGridViewTextBoxColumn data_note = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn nota_note = new DataGridViewTextBoxColumn();
+            dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            data_note,
+            nota_note});
+            data_note.Name = "data_note";
+            nota_note.Name = "nota_note";
+            dataGridView1.Rows.Clear();
+            {
+                SqlCommand cmd = new SqlCommand("AfisNote", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@materia", SqlDbType.VarChar, 50).Value = global.materie_selectata;
+                cmd.Parameters.Add("@elev", SqlDbType.VarChar, 50).Value = global.elev_selectat;
+                SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sqlDa.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int rowId = dataGridView1.Rows.Add();
+                    DataGridViewRow row = dataGridView1.Rows[rowId];
+                    string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
+                    row.Cells["data_note"].Value = data_corecta;
+                    row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
+                }
+            }
+        }
+
+        public static void afis_absente_profesori_()
+        {
+            dataGridView2 = new DataGridView();
+            DataGridViewTextBoxColumn data_absente = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn absenta_absente = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn motivat_absente = new DataGridViewTextBoxColumn();
+            dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            data_absente,
+            absenta_absente,
+            motivat_absente});
+            data_absente.Name = "data_absente";
+            absenta_absente.Name = "absenta_absente";
+            motivat_absente.Name = "motivat_absente";
+            dataGridView2.Rows.Clear();
+            {
+                SqlCommand cmd = new SqlCommand("AfisAbsente", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@materia", SqlDbType.VarChar, 50).Value = global.materie_selectata;
+                cmd.Parameters.Add("@elev", SqlDbType.VarChar, 50).Value = global.elev_selectat;
+                SqlDataAdapter sqlDa1 = new SqlDataAdapter(cmd);
+                DataTable dt1 = new DataTable();
+                sqlDa1.Fill(dt1);
+                for (int i = 0; i < dt1.Rows.Count; i++)
+                {
+                    int rowId = dataGridView2.Rows.Add();
+                    DataGridViewRow row = dataGridView2.Rows[rowId];
+                    string data_corecta = dt1.Rows[i]["data"].ToString().Substring(0, dt1.Rows[i]["data"].ToString().IndexOf(" "));
+                    row.Cells["data_absente"].Value = data_corecta;
+                    row.Cells["absenta_absente"].Value = dt1.Rows[i]["absente"].ToString();
+                    row.Cells["motivat_absente"].Value = dt1.Rows[i]["motivat"].ToString();
+                }
+            }
+        }
+
+        public static ComboBox CB_materii;
+        public static ComboBox CB_clase;
+        public static DataGridView dataGridView1;
+        public static Button inapoi;
+        public static Button afis_note;
+        public static Button afis_absente;
+        public static DataGridView dataGridView2;
+        public static DataGridViewTextBoxColumn data_absente;
+        public static DataGridViewTextBoxColumn absenta_absente;
+        public static DataGridViewTextBoxColumn motivat_absente;
+        public static DataGridView get_elvcls;
+        public static DataGridViewTextBoxColumn nume_elev;
+        public static Button afis_media;
+        public static Label medie;
+        public static DataGridViewTextBoxColumn data_note;
+        public static DataGridViewTextBoxColumn nota_note;
+        public static DataGridView dataGridView3;
+        public static DataGridViewTextBoxColumn denumire_note_total;
+        public static DataGridViewTextBoxColumn data_note_total;
+        public static DataGridViewTextBoxColumn nota_note_total;
+        public static DataGridView dataGridView4;
+        public static DataGridViewTextBoxColumn data_absente_total;
+        public static DataGridViewTextBoxColumn absenta_absente_total;
+        public static DataGridViewTextBoxColumn motivat_absente_total;
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CB_clase = new System.Windows.Forms.ComboBox();
             this.dgv_elevi = new System.Windows.Forms.DataGridView();
             this.nr_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,13 +39,14 @@
             this.data_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_absente = new System.Windows.Forms.DataGridView();
+            this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.CB_materii = new System.Windows.Forms.ComboBox();
             this.clasa = new System.Windows.Forms.Label();
             this.materia = new System.Windows.Forms.Label();
             this.inapoi = new System.Windows.Forms.Button();
-            this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.imibagpula = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -62,6 +63,7 @@
             this.CB_clase.Size = new System.Drawing.Size(475, 28);
             this.CB_clase.TabIndex = 1;
             this.CB_clase.TabStop = false;
+            this.CB_clase.SelectedIndexChanged += new System.EventHandler(this.CB_clase_SelectedIndexChanged);
             // 
             // dgv_elevi
             // 
@@ -85,12 +87,13 @@
             this.dgv_elevi.Size = new System.Drawing.Size(475, 450);
             this.dgv_elevi.TabIndex = 3;
             this.dgv_elevi.TabStop = false;
+            this.dgv_elevi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_elevi_CellClick);
             // 
             // nr_elev
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle13;
             this.nr_elev.FillWeight = 4F;
             this.nr_elev.HeaderText = "Nr.";
             this.nr_elev.MinimumWidth = 6;
@@ -128,12 +131,13 @@
             this.dgv_note.Size = new System.Drawing.Size(475, 200);
             this.dgv_note.TabIndex = 4;
             this.dgv_note.TabStop = false;
+            this.dgv_note.SelectionChanged += new System.EventHandler(this.dgv_note_SelectionChanged);
             // 
             // data_note
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Format = "d";
+            dataGridViewCellStyle14.NullValue = null;
+            this.data_note.DefaultCellStyle = dataGridViewCellStyle14;
             this.data_note.HeaderText = "Data";
             this.data_note.MinimumWidth = 6;
             this.data_note.Name = "data_note";
@@ -170,6 +174,33 @@
             this.dgv_absente.Size = new System.Drawing.Size(475, 200);
             this.dgv_absente.TabIndex = 14;
             this.dgv_absente.TabStop = false;
+            this.dgv_absente.SelectionChanged += new System.EventHandler(this.dgv_absente_SelectionChanged);
+            // 
+            // data_absente
+            // 
+            dataGridViewCellStyle15.Format = "d";
+            dataGridViewCellStyle15.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle15;
+            this.data_absente.HeaderText = "Data";
+            this.data_absente.MinimumWidth = 6;
+            this.data_absente.Name = "data_absente";
+            this.data_absente.ReadOnly = true;
+            // 
+            // absenta_absente
+            // 
+            this.absenta_absente.HeaderText = "Absente";
+            this.absenta_absente.MinimumWidth = 6;
+            this.absenta_absente.Name = "absenta_absente";
+            this.absenta_absente.ReadOnly = true;
+            // 
+            // motivat_absente
+            // 
+            this.motivat_absente.HeaderText = "Motivat";
+            this.motivat_absente.MinimumWidth = 6;
+            this.motivat_absente.Name = "motivat_absente";
+            this.motivat_absente.ReadOnly = true;
+            this.motivat_absente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.motivat_absente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // CB_materii
             // 
@@ -182,6 +213,7 @@
             this.CB_materii.Size = new System.Drawing.Size(475, 28);
             this.CB_materii.TabIndex = 15;
             this.CB_materii.TabStop = false;
+            this.CB_materii.SelectedIndexChanged += new System.EventHandler(this.CB_materii_SelectedIndexChanged);
             // 
             // clasa
             // 
@@ -230,31 +262,16 @@
             this.inapoi.UseVisualStyleBackColor = false;
             this.inapoi.Click += new System.EventHandler(this.inapoi_Click);
             // 
-            // data_absente
+            // imibagpula
             // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
-            this.data_absente.HeaderText = "Data";
-            this.data_absente.MinimumWidth = 6;
-            this.data_absente.Name = "data_absente";
-            this.data_absente.ReadOnly = true;
-            // 
-            // absenta_absente
-            // 
-            this.absenta_absente.HeaderText = "Absente";
-            this.absenta_absente.MinimumWidth = 6;
-            this.absenta_absente.Name = "absenta_absente";
-            this.absenta_absente.ReadOnly = true;
-            // 
-            // motivat_absente
-            // 
-            this.motivat_absente.HeaderText = "Motivat";
-            this.motivat_absente.MinimumWidth = 6;
-            this.motivat_absente.Name = "motivat_absente";
-            this.motivat_absente.ReadOnly = true;
-            this.motivat_absente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.motivat_absente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.imibagpula.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imibagpula.Location = new System.Drawing.Point(498, 566);
+            this.imibagpula.Name = "imibagpula";
+            this.imibagpula.Size = new System.Drawing.Size(378, 77);
+            this.imibagpula.TabIndex = 22;
+            this.imibagpula.Text = "IMI BAG PULA";
+            this.imibagpula.UseVisualStyleBackColor = true;
+            this.imibagpula.Click += new System.EventHandler(this.imibagpula_Click);
             // 
             // catalog_profesor
             // 
@@ -262,6 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(984, 687);
+            this.Controls.Add(this.imibagpula);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.materia);
             this.Controls.Add(this.clasa);
@@ -297,5 +315,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
         private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
+        private System.Windows.Forms.Button imibagpula;
     }
 }

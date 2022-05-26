@@ -18,5 +18,8 @@ namespace Catalog
         public static string nume_default;
         public static string materie_curenta_elev;
         public static string clasa_curenta;
+        public static string clasa_input;
+        public static string materie_selectata;
+        public static string elev_selectat;
     }
 }
