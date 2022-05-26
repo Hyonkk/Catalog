@@ -308,7 +308,7 @@ namespace Catalog
                     row.Cells["denumire_absente_total"].Value = dt1.Rows[i]["denumire"].ToString();
                     row.Cells["data_absente_total"].Value = data_corecta;
                     row.Cells["absenta_absente_total"].Value = dt1.Rows[i]["absente"].ToString();
-                    row.Cells["motivat_absente_total"].Value = dt1.Rows[i]["motivat"].ToString();
+                    row.Cells["motivat_absente_total"].Value = dt1.Rows[i]["motivat"];
                 }
             }
         }

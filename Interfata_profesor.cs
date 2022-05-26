@@ -41,11 +41,10 @@ namespace Catalog
 
         private void catalog_Click(object sender, EventArgs e)
         {
-            global.F_curent = new catalog();
+            global.F_curent = new catalog_profesor();
             this.Hide();
             global.F_curent.ShowDialog();
             this.Close();
-            global.ctr_log = 0;
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ter_elev));
             this.label1 = new System.Windows.Forms.Label();
+            this.clasa = new System.Windows.Forms.Label();
             this.eticheta_nume = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.Button();
             this.catalog = new System.Windows.Forms.Button();
@@ -47,6 +48,21 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 570);
             this.label1.TabIndex = 14;
+            // 
+            // clasa
+            // 
+            this.clasa.BackColor = System.Drawing.Color.RoyalBlue;
+            this.clasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clasa.ForeColor = System.Drawing.SystemColors.Control;
+            this.clasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clasa.Location = new System.Drawing.Point(12, 131);
+            this.clasa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.clasa.Name = "clasa";
+            this.clasa.Size = new System.Drawing.Size(200, 60);
+            this.clasa.TabIndex = 17;
+            this.clasa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // eticheta_nume
             // 
@@ -139,6 +155,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.clasa);
             this.Controls.Add(this.eticheta_nume);
             this.Controls.Add(this.logout);
             this.Controls.Add(this.catalog);
@@ -164,5 +181,6 @@
         private System.Windows.Forms.Label eticheta_nume;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label clasa;
     }
 }

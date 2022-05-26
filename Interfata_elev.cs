@@ -19,6 +19,7 @@ namespace Catalog
             global.F_curent.Select();
             this.CenterToScreen();
             creare_butoane();
+            clasa.Text = "Clasa "+global.clasa_curenta;
         }
         private void creare_butoane()
         {

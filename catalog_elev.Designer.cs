@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(catalog));
             this.CB_materii = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,19 +39,20 @@
             this.nota_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inapoi = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivat_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medie = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.denumire_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota_note_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.clasa = new System.Windows.Forms.Label();
             this.denumire_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.absenta_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivat_absente_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivat_absente_total = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -63,7 +64,7 @@
             this.CB_materii.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_materii.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_materii.FormattingEnabled = true;
-            this.CB_materii.Location = new System.Drawing.Point(11, 10);
+            this.CB_materii.Location = new System.Drawing.Point(11, 53);
             this.CB_materii.Margin = new System.Windows.Forms.Padding(2);
             this.CB_materii.Name = "CB_materii";
             this.CB_materii.Size = new System.Drawing.Size(475, 28);
@@ -75,13 +76,15 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_note,
             this.nota_note});
-            this.dataGridView1.Location = new System.Drawing.Point(11, 71);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 144);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -117,7 +120,7 @@
             this.inapoi.FlatAppearance.BorderSize = 0;
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inapoi.Location = new System.Drawing.Point(634, 10);
+            this.inapoi.Location = new System.Drawing.Point(634, 25);
             this.inapoi.Name = "inapoi";
             this.inapoi.Size = new System.Drawing.Size(202, 56);
             this.inapoi.TabIndex = 10;
@@ -130,6 +133,8 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -137,7 +142,7 @@
             this.data_absente,
             this.absenta_absente,
             this.motivat_absente});
-            this.dataGridView2.Location = new System.Drawing.Point(498, 71);
+            this.dataGridView2.Location = new System.Drawing.Point(498, 144);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -149,34 +154,10 @@
             this.dataGridView2.TabStop = false;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
-            // data_absente
-            // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle2;
-            this.data_absente.HeaderText = "Data";
-            this.data_absente.MinimumWidth = 6;
-            this.data_absente.Name = "data_absente";
-            this.data_absente.ReadOnly = true;
-            // 
-            // absenta_absente
-            // 
-            this.absenta_absente.HeaderText = "Absente";
-            this.absenta_absente.MinimumWidth = 6;
-            this.absenta_absente.Name = "absenta_absente";
-            this.absenta_absente.ReadOnly = true;
-            // 
-            // motivat_absente
-            // 
-            this.motivat_absente.HeaderText = "Motivat";
-            this.motivat_absente.MinimumWidth = 6;
-            this.motivat_absente.Name = "motivat_absente";
-            this.motivat_absente.ReadOnly = true;
-            // 
             // medie
             // 
             this.medie.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medie.Location = new System.Drawing.Point(245, 416);
+            this.medie.Location = new System.Drawing.Point(363, 424);
             this.medie.Name = "medie";
             this.medie.Size = new System.Drawing.Size(123, 56);
             this.medie.TabIndex = 15;
@@ -186,6 +167,8 @@
             // 
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -193,7 +176,7 @@
             this.denumire_note_total,
             this.data_note_total,
             this.nota_note_total});
-            this.dataGridView3.Location = new System.Drawing.Point(11, 71);
+            this.dataGridView3.Location = new System.Drawing.Point(11, 144);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
@@ -235,6 +218,8 @@
             // 
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -243,7 +228,7 @@
             this.data_absente_total,
             this.absenta_absente_total,
             this.motivat_absente_total});
-            this.dataGridView4.Location = new System.Drawing.Point(498, 71);
+            this.dataGridView4.Location = new System.Drawing.Point(498, 144);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
@@ -255,6 +240,22 @@
             this.dataGridView4.TabStop = false;
             this.dataGridView4.Visible = false;
             this.dataGridView4.SelectionChanged += new System.EventHandler(this.dataGridView4_SelectionChanged);
+            // 
+            // clasa
+            // 
+            this.clasa.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.clasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clasa.ForeColor = System.Drawing.Color.Black;
+            this.clasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clasa.Location = new System.Drawing.Point(12, 15);
+            this.clasa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+            this.clasa.Name = "clasa";
+            this.clasa.Size = new System.Drawing.Size(200, 30);
+            this.clasa.TabIndex = 18;
+            this.clasa.Text = "Materia";
+            this.clasa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // denumire_absente_total
             // 
@@ -285,6 +286,34 @@
             this.motivat_absente_total.MinimumWidth = 6;
             this.motivat_absente_total.Name = "motivat_absente_total";
             this.motivat_absente_total.ReadOnly = true;
+            this.motivat_absente_total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.motivat_absente_total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // data_absente
+            // 
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.data_absente.HeaderText = "Data";
+            this.data_absente.MinimumWidth = 6;
+            this.data_absente.Name = "data_absente";
+            this.data_absente.ReadOnly = true;
+            // 
+            // absenta_absente
+            // 
+            this.absenta_absente.HeaderText = "Absente";
+            this.absenta_absente.MinimumWidth = 6;
+            this.absenta_absente.Name = "absenta_absente";
+            this.absenta_absente.ReadOnly = true;
+            // 
+            // motivat_absente
+            // 
+            this.motivat_absente.HeaderText = "Motivat";
+            this.motivat_absente.MinimumWidth = 6;
+            this.motivat_absente.Name = "motivat_absente";
+            this.motivat_absente.ReadOnly = true;
+            this.motivat_absente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.motivat_absente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // catalog
             // 
@@ -292,6 +321,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(984, 687);
+            this.Controls.Add(this.clasa);
             this.Controls.Add(this.medie);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.dataGridView1);
@@ -319,9 +349,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Button inapoi;
         public System.Windows.Forms.DataGridView dataGridView2;
-        public System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
-        public System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
-        public System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente;
         public System.Windows.Forms.Label medie;
         public System.Windows.Forms.DataGridViewTextBoxColumn data_note;
         public System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
@@ -330,9 +357,13 @@
         public System.Windows.Forms.DataGridViewTextBoxColumn data_note_total;
         public System.Windows.Forms.DataGridViewTextBoxColumn nota_note_total;
         public System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label clasa;
         private System.Windows.Forms.DataGridViewTextBoxColumn denumire_absente_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn data_absente_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente_total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn motivat_absente_total;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
     }
 }
