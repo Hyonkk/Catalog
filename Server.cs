@@ -376,6 +376,7 @@ namespace Catalog
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 global.materie_selectata = dt.Rows[i]["denumire"].ToString();
+                global.materie_selectata_id = Convert.ToInt32(dt.Rows[i]["id_disciplina"]);
             }
         }
 

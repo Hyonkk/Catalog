@@ -21,5 +21,8 @@ namespace Catalog
         public static string clasa_input;
         public static string materie_selectata;
         public static string elev_selectat;
+        public static string data_selectata;
+        public static int noab_selecata;
+        public static int materie_selectata_id;
     }
 }

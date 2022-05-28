@@ -44,6 +44,14 @@
             this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.clasa = new System.Windows.Forms.Label();
             this.inapoi = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tx_date = new System.Windows.Forms.TextBox();
+            this.CB_noab = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tx_noab = new System.Windows.Forms.TextBox();
+            this.b_no = new System.Windows.Forms.Button();
+            this.b_ab = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -230,12 +238,115 @@
             this.inapoi.UseVisualStyleBackColor = false;
             this.inapoi.Click += new System.EventHandler(this.inapoi_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(857, 589);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(18, 20);
+            this.dateTimePicker1.TabIndex = 22;
+            // 
+            // tx_date
+            // 
+            this.tx_date.Location = new System.Drawing.Point(727, 589);
+            this.tx_date.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.tx_date.Name = "tx_date";
+            this.tx_date.Size = new System.Drawing.Size(130, 20);
+            this.tx_date.TabIndex = 23;
+            // 
+            // CB_noab
+            // 
+            this.CB_noab.FormattingEnabled = true;
+            this.CB_noab.IntegralHeight = false;
+            this.CB_noab.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.CB_noab.Location = new System.Drawing.Point(856, 626);
+            this.CB_noab.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.CB_noab.Name = "CB_noab";
+            this.CB_noab.Size = new System.Drawing.Size(19, 21);
+            this.CB_noab.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(530, 584);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 25);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Data";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(530, 622);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 25);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Nota/Absente";
+            // 
+            // tx_noab
+            // 
+            this.tx_noab.Location = new System.Drawing.Point(727, 627);
+            this.tx_noab.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.tx_noab.Name = "tx_noab";
+            this.tx_noab.Size = new System.Drawing.Size(130, 20);
+            this.tx_noab.TabIndex = 27;
+            // 
+            // b_no
+            // 
+            this.b_no.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.b_no.FlatAppearance.BorderSize = 0;
+            this.b_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.b_no.Location = new System.Drawing.Point(535, 689);
+            this.b_no.Name = "b_no";
+            this.b_no.Size = new System.Drawing.Size(160, 73);
+            this.b_no.TabIndex = 28;
+            this.b_no.TabStop = false;
+            this.b_no.Text = "Adauga nota";
+            this.b_no.UseVisualStyleBackColor = false;
+            this.b_no.Click += new System.EventHandler(this.b_no_Click);
+            // 
+            // b_ab
+            // 
+            this.b_ab.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.b_ab.FlatAppearance.BorderSize = 0;
+            this.b_ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.b_ab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.b_ab.Location = new System.Drawing.Point(727, 689);
+            this.b_ab.Name = "b_ab";
+            this.b_ab.Size = new System.Drawing.Size(160, 73);
+            this.b_ab.TabIndex = 29;
+            this.b_ab.TabStop = false;
+            this.b_ab.Text = "Adauga absenta";
+            this.b_ab.UseVisualStyleBackColor = false;
+            this.b_ab.Click += new System.EventHandler(this.b_ab_Click);
+            // 
             // catalog_profesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(984, 687);
+            this.ClientSize = new System.Drawing.Size(999, 774);
+            this.Controls.Add(this.b_ab);
+            this.Controls.Add(this.b_no);
+            this.Controls.Add(this.tx_noab);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CB_noab);
+            this.Controls.Add(this.tx_date);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.clasa);
             this.Controls.Add(this.dgv_absente);
@@ -249,6 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -267,5 +379,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
         private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox tx_date;
+        private System.Windows.Forms.ComboBox CB_noab;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tx_noab;
+        public System.Windows.Forms.Button b_no;
+        public System.Windows.Forms.Button b_ab;
     }
 }
