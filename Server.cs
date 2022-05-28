@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Catalog
 {
@@ -334,6 +335,7 @@ namespace Catalog
             CB_clase = new ComboBox();
             SqlCommand cmd = new SqlCommand("GetClase", sqlCon);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("prof", SqlDbType.VarChar, 50).Value = global.nume_default;
             SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlDa.Fill(dt);
@@ -361,6 +363,19 @@ namespace Catalog
                 int rowId = get_elvcls.Rows.Add();
                 DataGridViewRow row = get_elvcls.Rows[rowId];
                 row.Cells["nume_elev"].Value = dt.Rows[i]["Nume_Default"].ToString();
+            }
+        }
+
+        public static void get_materie_for_prof()
+        {
+            SqlCommand cmd = new SqlCommand("GetMaterieForProf", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.materie_selectata = dt.Rows[i]["denumire"].ToString();
             }
         }
 

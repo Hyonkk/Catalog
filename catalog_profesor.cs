@@ -16,9 +16,8 @@ namespace Catalog
         {
             InitializeComponent();
             Server.get_clase();
-            Server.combobox_materii();
+            Server.get_materie_for_prof();
             CB_clase.Items.AddRange(Server.CB_clase.Items.Cast<Object>().ToArray());
-            CB_materii.Items.AddRange(Server.CB_materii.Items.Cast<Object>().ToArray());
         }
 
         private void inapoi_Click(object sender, EventArgs e)
@@ -49,6 +48,31 @@ namespace Catalog
         private void dgv_elevi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             global.elev_selectat = dgv_elevi.CurrentCell.Value.ToString();
+
+            Server.afis_absente_profesori_();
+            Server.afis_note_profesori_();
+
+            dgv_absente.Rows.Clear();
+            dgv_note.Rows.Clear();
+
+            for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
+            {
+                DataGridViewRow row = Server.dataGridView1.Rows[i];
+                dgv_note.Rows.Add();
+                DataGridViewRow row1 = dgv_note.Rows[i];
+                row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
+                row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+            }
+
+            for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+            {
+                DataGridViewRow row = Server.dataGridView2.Rows[i];
+                dgv_absente.Rows.Add();
+                DataGridViewRow row1 = dgv_absente.Rows[i];
+                row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+            }
         }
 
         private void CB_materii_SelectedIndexChanged(object sender, EventArgs e)
