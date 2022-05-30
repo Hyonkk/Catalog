@@ -74,16 +74,18 @@ namespace Catalog
                 row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
                 row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
             }
+            dgv_note.CurrentCell = null;
+            dgv_absente.CurrentCell = null;
         }
 
         private void dgv_note_SelectionChanged(object sender, EventArgs e)
         {
-            dgv_note.CurrentCell = null;
+            //dgv_note.CurrentCell = null;
         }
 
         private void dgv_absente_SelectionChanged(object sender, EventArgs e)
         {
-            dgv_absente.CurrentCell = null;
+            //dgv_absente.CurrentCell = null;
         }
 
         private void b_no_Click(object sender, EventArgs e)
@@ -154,7 +156,46 @@ namespace Catalog
 
         private void sterg_Click(object sender, EventArgs e)
         {
+            global.data_de_sters = Convert.ToDateTime(dgv_note.SelectedCells[0].Value);
+            Server.nota_delete();
+            Server.afis_note_profesori_();
 
+            dgv_note.Rows.Clear();
+
+            for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
+            {
+                DataGridViewRow row = Server.dataGridView1.Rows[i];
+                dgv_note.Rows.Add();
+                DataGridViewRow row1 = dgv_note.Rows[i];
+                row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
+                row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+            }
+
+        }
+
+        private void reset_Click(object sender, EventArgs e)
+        {
+            dgv_note.CurrentCell = null;
+            dgv_absente.CurrentCell = null;
+        }
+
+        private void sterg_ab_Click(object sender, EventArgs e)
+        {
+            global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
+            Server.absenta_delete();
+            Server.afis_absente_profesori_();
+
+            dgv_absente.Rows.Clear();
+
+            for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+            {
+                DataGridViewRow row = Server.dataGridView2.Rows[i];
+                dgv_absente.Rows.Add();
+                DataGridViewRow row1 = dgv_absente.Rows[i];
+                row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+            }
         }
     }
 }

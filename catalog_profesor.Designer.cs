@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CB_clase = new System.Windows.Forms.ComboBox();
             this.dgv_elevi = new System.Windows.Forms.DataGridView();
             this.nr_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +52,9 @@
             this.b_ab = new System.Windows.Forms.Button();
             this.lb_data = new System.Windows.Forms.Label();
             this.lb_noab = new System.Windows.Forms.Label();
-            this.sterg = new System.Windows.Forms.Button();
+            this.sterg_no = new System.Windows.Forms.Button();
+            this.reset = new System.Windows.Forms.Button();
+            this.sterg_ab = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -97,9 +99,9 @@
             // 
             // nr_elev
             // 
-            dataGridViewCellStyle28.Format = "d";
-            dataGridViewCellStyle28.NullValue = null;
-            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle1;
             this.nr_elev.FillWeight = 4F;
             this.nr_elev.HeaderText = "Nr.";
             this.nr_elev.MinimumWidth = 6;
@@ -138,13 +140,14 @@
             this.dgv_note.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_note.Size = new System.Drawing.Size(475, 200);
             this.dgv_note.TabIndex = 4;
+            this.dgv_note.TabStop = false;
             this.dgv_note.SelectionChanged += new System.EventHandler(this.dgv_note_SelectionChanged);
             // 
             // data_note
             // 
-            dataGridViewCellStyle29.Format = "M";
-            dataGridViewCellStyle29.NullValue = null;
-            this.data_note.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle2.Format = "M";
+            dataGridViewCellStyle2.NullValue = null;
+            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
             this.data_note.HeaderText = "Data";
             this.data_note.MinimumWidth = 6;
             this.data_note.Name = "data_note";
@@ -185,9 +188,9 @@
             // 
             // data_absente
             // 
-            dataGridViewCellStyle30.Format = "d";
-            dataGridViewCellStyle30.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_absente.HeaderText = "Data";
             this.data_absente.MinimumWidth = 6;
             this.data_absente.Name = "data_absente";
@@ -339,20 +342,50 @@
             this.lb_noab.Size = new System.Drawing.Size(0, 31);
             this.lb_noab.TabIndex = 32;
             // 
-            // sterg
+            // sterg_no
             // 
-            this.sterg.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.sterg.FlatAppearance.BorderSize = 0;
-            this.sterg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sterg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.sterg.Location = new System.Drawing.Point(523, 302);
-            this.sterg.Name = "sterg";
-            this.sterg.Size = new System.Drawing.Size(108, 40);
-            this.sterg.TabIndex = 33;
-            this.sterg.TabStop = false;
-            this.sterg.Text = "Sterge";
-            this.sterg.UseVisualStyleBackColor = false;
-            this.sterg.Click += new System.EventHandler(this.sterg_Click);
+            this.sterg_no.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.sterg_no.FlatAppearance.BorderSize = 0;
+            this.sterg_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sterg_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.sterg_no.Location = new System.Drawing.Point(519, 302);
+            this.sterg_no.Name = "sterg_no";
+            this.sterg_no.Size = new System.Drawing.Size(128, 40);
+            this.sterg_no.TabIndex = 33;
+            this.sterg_no.TabStop = false;
+            this.sterg_no.Text = "Sterge note";
+            this.sterg_no.UseVisualStyleBackColor = false;
+            this.sterg_no.Click += new System.EventHandler(this.sterg_Click);
+            // 
+            // reset
+            // 
+            this.reset.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.reset.FlatAppearance.BorderSize = 0;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.reset.Location = new System.Drawing.Point(821, 302);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(108, 40);
+            this.reset.TabIndex = 34;
+            this.reset.TabStop = false;
+            this.reset.Text = "Resetare";
+            this.reset.UseVisualStyleBackColor = false;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
+            // 
+            // sterg_ab
+            // 
+            this.sterg_ab.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.sterg_ab.FlatAppearance.BorderSize = 0;
+            this.sterg_ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sterg_ab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.sterg_ab.Location = new System.Drawing.Point(653, 302);
+            this.sterg_ab.Name = "sterg_ab";
+            this.sterg_ab.Size = new System.Drawing.Size(162, 40);
+            this.sterg_ab.TabIndex = 35;
+            this.sterg_ab.TabStop = false;
+            this.sterg_ab.Text = "Sterge absenta";
+            this.sterg_ab.UseVisualStyleBackColor = false;
+            this.sterg_ab.Click += new System.EventHandler(this.sterg_ab_Click);
             // 
             // catalog_profesor
             // 
@@ -360,7 +393,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(999, 774);
-            this.Controls.Add(this.sterg);
+            this.Controls.Add(this.sterg_ab);
+            this.Controls.Add(this.reset);
+            this.Controls.Add(this.sterg_no);
             this.Controls.Add(this.lb_noab);
             this.Controls.Add(this.lb_data);
             this.Controls.Add(this.b_ab);
@@ -409,6 +444,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
         private System.Windows.Forms.Label lb_data;
         private System.Windows.Forms.Label lb_noab;
-        public System.Windows.Forms.Button sterg;
+        public System.Windows.Forms.Button sterg_no;
+        public System.Windows.Forms.Button reset;
+        public System.Windows.Forms.Button sterg_ab;
     }
 }

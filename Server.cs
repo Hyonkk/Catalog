@@ -485,6 +485,25 @@ namespace Catalog
 
         }
 
+        public static void nota_delete()
+        {
+            SqlCommand cmd = new SqlCommand("deletenota", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_de_sters;
+            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
+            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.ExecuteNonQuery();
+        }
+        public static void absenta_delete()
+        {
+            SqlCommand cmd = new SqlCommand("deleteabsenta", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_de_sters;
+            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
+            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.ExecuteNonQuery();
+        }
+
         public static ComboBox CB_materii;
         public static ComboBox CB_clase;
         public static DataGridView dataGridView1;
