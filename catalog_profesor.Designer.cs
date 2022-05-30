@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CB_clase = new System.Windows.Forms.ComboBox();
             this.dgv_elevi = new System.Windows.Forms.DataGridView();
             this.nr_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,13 +45,14 @@
             this.clasa = new System.Windows.Forms.Label();
             this.inapoi = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tx_date = new System.Windows.Forms.TextBox();
             this.CB_noab = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tx_noab = new System.Windows.Forms.TextBox();
             this.b_no = new System.Windows.Forms.Button();
             this.b_ab = new System.Windows.Forms.Button();
+            this.lb_data = new System.Windows.Forms.Label();
+            this.lb_noab = new System.Windows.Forms.Label();
+            this.sterg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -96,9 +97,9 @@
             // 
             // nr_elev
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle28.Format = "d";
+            dataGridViewCellStyle28.NullValue = null;
+            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle28;
             this.nr_elev.FillWeight = 4F;
             this.nr_elev.HeaderText = "Nr.";
             this.nr_elev.MinimumWidth = 6;
@@ -126,6 +127,7 @@
             this.dgv_note.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_note,
             this.nota_note});
+            this.dgv_note.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv_note.Location = new System.Drawing.Point(498, 97);
             this.dgv_note.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_note.Name = "dgv_note";
@@ -133,16 +135,16 @@
             this.dgv_note.RowHeadersVisible = false;
             this.dgv_note.RowHeadersWidth = 51;
             this.dgv_note.RowTemplate.Height = 24;
+            this.dgv_note.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_note.Size = new System.Drawing.Size(475, 200);
             this.dgv_note.TabIndex = 4;
-            this.dgv_note.TabStop = false;
             this.dgv_note.SelectionChanged += new System.EventHandler(this.dgv_note_SelectionChanged);
             // 
             // data_note
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle29.Format = "M";
+            dataGridViewCellStyle29.NullValue = null;
+            this.data_note.DefaultCellStyle = dataGridViewCellStyle29;
             this.data_note.HeaderText = "Data";
             this.data_note.MinimumWidth = 6;
             this.data_note.Name = "data_note";
@@ -183,9 +185,9 @@
             // 
             // data_absente
             // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle30.Format = "d";
+            dataGridViewCellStyle30.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle30;
             this.data_absente.HeaderText = "Data";
             this.data_absente.MinimumWidth = 6;
             this.data_absente.Name = "data_absente";
@@ -240,19 +242,12 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(857, 589);
+            this.dateTimePicker1.Location = new System.Drawing.Point(891, 589);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(18, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(17, 20);
             this.dateTimePicker1.TabIndex = 22;
-            // 
-            // tx_date
-            // 
-            this.tx_date.Location = new System.Drawing.Point(727, 589);
-            this.tx_date.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.tx_date.Name = "tx_date";
-            this.tx_date.Size = new System.Drawing.Size(130, 20);
-            this.tx_date.TabIndex = 23;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // CB_noab
             // 
@@ -269,11 +264,12 @@
             "8",
             "9",
             "10"});
-            this.CB_noab.Location = new System.Drawing.Point(856, 626);
+            this.CB_noab.Location = new System.Drawing.Point(891, 626);
             this.CB_noab.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.CB_noab.Name = "CB_noab";
-            this.CB_noab.Size = new System.Drawing.Size(19, 21);
+            this.CB_noab.Size = new System.Drawing.Size(31, 21);
             this.CB_noab.TabIndex = 24;
+            this.CB_noab.SelectedIndexChanged += new System.EventHandler(this.CB_noab_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -294,14 +290,6 @@
             this.label2.Size = new System.Drawing.Size(132, 25);
             this.label2.TabIndex = 26;
             this.label2.Text = "Nota/Absente";
-            // 
-            // tx_noab
-            // 
-            this.tx_noab.Location = new System.Drawing.Point(727, 627);
-            this.tx_noab.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
-            this.tx_noab.Name = "tx_noab";
-            this.tx_noab.Size = new System.Drawing.Size(130, 20);
-            this.tx_noab.TabIndex = 27;
             // 
             // b_no
             // 
@@ -333,19 +321,53 @@
             this.b_ab.UseVisualStyleBackColor = false;
             this.b_ab.Click += new System.EventHandler(this.b_ab_Click);
             // 
+            // lb_data
+            // 
+            this.lb_data.AutoSize = true;
+            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data.Location = new System.Drawing.Point(721, 580);
+            this.lb_data.Name = "lb_data";
+            this.lb_data.Size = new System.Drawing.Size(0, 31);
+            this.lb_data.TabIndex = 31;
+            // 
+            // lb_noab
+            // 
+            this.lb_noab.AutoSize = true;
+            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_noab.Location = new System.Drawing.Point(721, 622);
+            this.lb_noab.Name = "lb_noab";
+            this.lb_noab.Size = new System.Drawing.Size(0, 31);
+            this.lb_noab.TabIndex = 32;
+            // 
+            // sterg
+            // 
+            this.sterg.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.sterg.FlatAppearance.BorderSize = 0;
+            this.sterg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sterg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.sterg.Location = new System.Drawing.Point(523, 302);
+            this.sterg.Name = "sterg";
+            this.sterg.Size = new System.Drawing.Size(108, 40);
+            this.sterg.TabIndex = 33;
+            this.sterg.TabStop = false;
+            this.sterg.Text = "Sterge";
+            this.sterg.UseVisualStyleBackColor = false;
+            this.sterg.Click += new System.EventHandler(this.sterg_Click);
+            // 
             // catalog_profesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(999, 774);
+            this.Controls.Add(this.sterg);
+            this.Controls.Add(this.lb_noab);
+            this.Controls.Add(this.lb_data);
             this.Controls.Add(this.b_ab);
             this.Controls.Add(this.b_no);
-            this.Controls.Add(this.tx_noab);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CB_noab);
-            this.Controls.Add(this.tx_date);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.inapoi);
             this.Controls.Add(this.clasa);
@@ -371,8 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nr_elev;
         private System.Windows.Forms.DataGridViewTextBoxColumn nume_elev;
         public System.Windows.Forms.DataGridView dgv_note;
-        public System.Windows.Forms.DataGridViewTextBoxColumn data_note;
-        public System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
         public System.Windows.Forms.DataGridView dgv_absente;
         private System.Windows.Forms.Label clasa;
         public System.Windows.Forms.Button inapoi;
@@ -380,12 +400,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox tx_date;
         private System.Windows.Forms.ComboBox CB_noab;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tx_noab;
         public System.Windows.Forms.Button b_no;
         public System.Windows.Forms.Button b_ab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
+        private System.Windows.Forms.Label lb_data;
+        private System.Windows.Forms.Label lb_noab;
+        public System.Windows.Forms.Button sterg;
     }
 }

@@ -339,6 +339,9 @@ namespace Catalog
             SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlDa.Fill(dt);
+            DataView dv = dt.DefaultView;
+            dv.Sort = "Clasa ASC";
+            dt = dv.ToTable();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 CB_clase.Items.Add(dt.Rows[i]["Clasa"].ToString());
@@ -442,6 +445,44 @@ namespace Catalog
                     row.Cells["motivat_absente"].Value = dt1.Rows[i]["motivat"].ToString();
                 }
             }
+        }
+
+        public static void nume_to_id()
+        {
+            SqlCommand cmd = new SqlCommand("NumeToId",sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@nume", SqlDbType.VarChar, 50).Value = global.elev_selectat;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.id_nume = Convert.ToInt32(dt.Rows[i]["id"]);
+            }
+        }
+
+        public static void no_incarc()
+        {
+                SqlCommand cmd = new SqlCommand("AdaugaNota", sqlCon);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_selectat;
+                cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
+                cmd.Parameters.Add("@id_disciplina", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+                cmd.Parameters.Add("@nota", SqlDbType.VarChar, 50).Value = global.noab;
+                cmd.ExecuteNonQuery();
+        }
+
+        public static void ab_incarc()
+        {
+
+            SqlCommand cmd = new SqlCommand("AdaugaAbsenta", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_selectat;
+            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
+            cmd.Parameters.Add("@id_disciplina", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.Parameters.Add("@absenta", SqlDbType.VarChar, 50).Value = global.noab;
+            cmd.ExecuteNonQuery();
+
         }
 
         public static ComboBox CB_materii;

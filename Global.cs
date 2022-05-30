@@ -24,5 +24,8 @@ namespace Catalog
         public static string data_selectata;
         public static int noab_selecata;
         public static int materie_selectata_id;
+        public static int id_nume;
+        public static int noab;
+        public static DateTime data_selectat;
     }
 }

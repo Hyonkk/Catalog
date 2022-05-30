@@ -51,6 +51,7 @@ namespace Catalog
 
             Server.afis_absente_profesori_();
             Server.afis_note_profesori_();
+            Server.nume_to_id();
 
             dgv_absente.Rows.Clear();
             dgv_note.Rows.Clear();
@@ -87,10 +88,71 @@ namespace Catalog
 
         private void b_no_Click(object sender, EventArgs e)
         {
+            if (String.Equals(lb_data.Text, "") || String.Equals(lb_noab.Text, "")) MessageBox.Show("Introduceti o data sau o nota/absenta valida", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                global.data_selectat = Convert.ToDateTime(lb_data.Text);
+                global.noab = Convert.ToInt32(lb_noab.Text);
 
+                Server.no_incarc();
+                Server.afis_note_profesori_();
+
+                dgv_note.Rows.Clear();
+
+                for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = Server.dataGridView1.Rows[i];
+                    dgv_note.Rows.Add();
+                    DataGridViewRow row1 = dgv_note.Rows[i];
+                    row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
+                    row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                }
+                lb_data.Text = "";
+                lb_noab.Text = "";
+            }
         }
 
         private void b_ab_Click(object sender, EventArgs e)
+        {
+            if (String.Equals(lb_data.Text, "") || String.Equals(lb_noab.Text, "")) MessageBox.Show("Introduceti o data sau o nota/absenta valida", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                global.data_selectat = Convert.ToDateTime(lb_data.Text);
+                global.noab = Convert.ToInt32(lb_noab.Text);
+
+                Server.ab_incarc();
+                Server.afis_absente_profesori_();
+
+                dgv_absente.Rows.Clear();
+
+                for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = Server.dataGridView2.Rows[i];
+                    dgv_absente.Rows.Add();
+                    DataGridViewRow row1 = dgv_absente.Rows[i];
+                    row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                    row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                    row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                }
+
+                lb_data.Text = "";
+                lb_noab.Text = "";
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            lb_data.Text = dateTimePicker1.Text;
+            global.data_selectat = Convert.ToDateTime(lb_data.Text);
+        }
+
+        private void CB_noab_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lb_noab.Text = CB_noab.Text;
+            global.noab = Convert.ToInt32(lb_noab.Text);
+        }
+
+        private void sterg_Click(object sender, EventArgs e)
         {
 
         }
