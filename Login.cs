@@ -28,7 +28,7 @@ namespace Catalog
 
             password.BorderStyle = BorderStyle.FixedSingle;
             password.Visible = false;
-            password.PasswordChar = '*';
+            password.PasswordChar = '●';
             password.Font= new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             //creare buton logare
