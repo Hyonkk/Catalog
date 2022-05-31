@@ -515,6 +515,66 @@ namespace Catalog
             cmd.ExecuteNonQuery();
         }
 
+        public static void afis_media()
+        {
+            SqlCommand cmd = new SqlCommand("AfisMedie", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
+            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.medie = Convert.ToDouble(dt.Rows[i]["Medie"]);
+            }
+        }
+
+        public static void afis_media_elev()
+        {
+            SqlCommand cmd = new SqlCommand("AfisMedieElev", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@nume", SqlDbType.VarChar, 50).Value = global.nume_default;
+            cmd.Parameters.Add("disciplina", SqlDbType.VarChar, 50).Value = global.materie_curenta_elev;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.medie = Convert.ToDouble(dt.Rows[i]["Medie"]);
+            }
+        }
+
+        public static void afis_nr_absente()
+        {
+            SqlCommand cmd = new SqlCommand("numarabsente", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@nume", SqlDbType.VarChar, 50).Value = global.nume_default;
+            cmd.Parameters.Add("disciplina", SqlDbType.VarChar, 50).Value = global.materie_curenta_elev;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.nrabsente = Convert.ToInt32(dt.Rows[i]["Numar"]);
+            }
+        }
+
+        public static void afis_nr_absente_motivate()
+        {
+            SqlCommand cmd = new SqlCommand("numarabsentemotivate", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@nume", SqlDbType.VarChar, 50).Value = global.nume_default;
+            cmd.Parameters.Add("disciplina", SqlDbType.VarChar, 50).Value = global.materie_curenta_elev;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.nrabsentemotivate = Convert.ToInt32(dt.Rows[i]["Numar"]);
+            }
+        }
+
         public static ComboBox CB_materii;
         public static ComboBox CB_clase;
         public static DataGridView dataGridView1;
@@ -527,7 +587,6 @@ namespace Catalog
         public static DataGridViewTextBoxColumn motivat_absente;
         public static DataGridView get_elvcls;
         public static DataGridViewTextBoxColumn nume_elev;
-        public static Button afis_media;
         public static Label medie;
         public static DataGridViewTextBoxColumn data_note;
         public static DataGridViewTextBoxColumn nota_note;

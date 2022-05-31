@@ -131,6 +131,42 @@ namespace Catalog
                     row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
                 }
             }
+            if(!String.Equals(CB_materii.Text,"Toate"))
+            {
+                global.medie = -1;
+                global.nrabsente = -1;
+                Server.afis_media_elev();
+                Server.afis_nr_absente();
+                Server.afis_nr_absente_motivate();
+                lb_med.Text = "Nu se poate calcula media";
+                if (global.medie != -1)
+                {
+                    lb_med.Text = global.medie.ToString();
+                }
+
+                lb_abs.Text = global.nrabsente.ToString();
+                lb_abs_motivate.Text = global.nrabsentemotivate.ToString();
+                lb_abs_nemotivate.Text = (global.nrabsente - global.nrabsentemotivate).ToString();
+                lb_medie.Visible = true;
+                lb_med.Visible = true;
+                lb_abs.Visible = true;
+                lb_absente.Visible = true;
+                lb_absente_motivate.Visible = true;
+                lb_abs_motivate.Visible = true;
+                lb_abs_nemotivate.Visible = true;
+                lb_absente_nemotivate.Visible = true;
+            }
+            else
+            {
+                lb_medie.Visible = false;
+                lb_med.Visible = false;
+                lb_abs.Visible = false;
+                lb_absente.Visible = false;
+                lb_abs_motivate.Visible = false;
+                lb_absente_motivate.Visible = false;
+                lb_abs_nemotivate.Visible = false;
+                lb_absente_nemotivate.Visible = false;
+            }
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CB_clase = new System.Windows.Forms.ComboBox();
             this.dgv_elevi = new System.Windows.Forms.DataGridView();
             this.nr_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +55,8 @@
             this.sterg_no = new System.Windows.Forms.Button();
             this.reset = new System.Windows.Forms.Button();
             this.sterg_ab = new System.Windows.Forms.Button();
+            this.lb_medie = new System.Windows.Forms.Label();
+            this.lb_med = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -81,6 +83,7 @@
             this.dgv_elevi.AllowUserToResizeRows = false;
             this.dgv_elevi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_elevi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgv_elevi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_elevi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_elevi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nr_elev,
@@ -99,9 +102,9 @@
             // 
             // nr_elev
             // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle4;
             this.nr_elev.FillWeight = 4F;
             this.nr_elev.HeaderText = "Nr.";
             this.nr_elev.MinimumWidth = 6;
@@ -125,6 +128,7 @@
             this.dgv_note.AllowUserToResizeRows = false;
             this.dgv_note.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_note.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgv_note.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_note.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_note.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_note,
@@ -145,9 +149,9 @@
             // 
             // data_note
             // 
-            dataGridViewCellStyle2.Format = "M";
-            dataGridViewCellStyle2.NullValue = null;
-            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "M";
+            dataGridViewCellStyle5.NullValue = null;
+            this.data_note.DefaultCellStyle = dataGridViewCellStyle5;
             this.data_note.HeaderText = "Data";
             this.data_note.MinimumWidth = 6;
             this.data_note.Name = "data_note";
@@ -169,6 +173,7 @@
             this.dgv_absente.AllowUserToResizeRows = false;
             this.dgv_absente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_absente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgv_absente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_absente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_absente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_absente,
@@ -189,9 +194,9 @@
             // 
             // data_absente
             // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle6;
             this.data_absente.HeaderText = "Data";
             this.data_absente.MinimumWidth = 6;
             this.data_absente.Name = "data_absente";
@@ -217,7 +222,7 @@
             this.clasa.BackColor = System.Drawing.Color.CornflowerBlue;
             this.clasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.clasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clasa.ForeColor = System.Drawing.Color.Black;
             this.clasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clasa.Location = new System.Drawing.Point(12, 15);
@@ -226,7 +231,7 @@
             this.clasa.Size = new System.Drawing.Size(200, 30);
             this.clasa.TabIndex = 19;
             this.clasa.Text = "Clasa";
-            this.clasa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clasa.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // inapoi
             // 
@@ -387,12 +392,35 @@
             this.sterg_ab.UseVisualStyleBackColor = false;
             this.sterg_ab.Click += new System.EventHandler(this.sterg_ab_Click);
             // 
+            // lb_medie
+            // 
+            this.lb_medie.AutoSize = true;
+            this.lb_medie.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_medie.Location = new System.Drawing.Point(496, 46);
+            this.lb_medie.Name = "lb_medie";
+            this.lb_medie.Size = new System.Drawing.Size(102, 31);
+            this.lb_medie.TabIndex = 36;
+            this.lb_medie.Text = "Media: ";
+            this.lb_medie.Visible = false;
+            // 
+            // lb_med
+            // 
+            this.lb_med.AutoSize = true;
+            this.lb_med.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_med.Location = new System.Drawing.Point(593, 46);
+            this.lb_med.Name = "lb_med";
+            this.lb_med.Size = new System.Drawing.Size(0, 31);
+            this.lb_med.TabIndex = 37;
+            this.lb_med.Visible = false;
+            // 
             // catalog_profesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(986, 811);
+            this.Controls.Add(this.lb_med);
+            this.Controls.Add(this.lb_medie);
             this.Controls.Add(this.sterg_ab);
             this.Controls.Add(this.reset);
             this.Controls.Add(this.sterg_no);
@@ -447,5 +475,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
         private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
+        private System.Windows.Forms.Label lb_medie;
+        private System.Windows.Forms.Label lb_med;
     }
 }

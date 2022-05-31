@@ -12,6 +12,7 @@ namespace Catalog
 {
     public partial class catalog_profesor : Form
     {
+        public int ctrl = 0;
         public catalog_profesor()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace Catalog
 
         private void CB_clase_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ctrl = 1;
             dgv_absente.Rows.Clear();
             dgv_note.Rows.Clear();
             global.clasa_input = CB_clase.Text;
@@ -48,35 +50,47 @@ namespace Catalog
 
         private void dgv_elevi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            global.elev_selectat = dgv_elevi.CurrentCell.Value.ToString();
-
-            Server.afis_absente_profesori_();
-            Server.afis_note_profesori_();
-            Server.nume_to_id();
-
-            dgv_absente.Rows.Clear();
-            dgv_note.Rows.Clear();
-
-            for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
+            if (ctrl == 1)
             {
-                DataGridViewRow row = Server.dataGridView1.Rows[i];
-                dgv_note.Rows.Add();
-                DataGridViewRow row1 = dgv_note.Rows[i];
-                row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
-                row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
-            }
+                global.elev_selectat = dgv_elevi.CurrentCell.Value.ToString();
+                global.medie = -1;
+                lb_med.Text = "Nu se poate calcula media";
+                Server.afis_absente_profesori_();
+                Server.afis_note_profesori_();
+                Server.nume_to_id();
+                Server.afis_media();
+                lb_medie.Visible = true;
+                lb_med.Visible = true;
+                if (global.medie != -1)
+                {
+                    lb_med.Text = global.medie.ToString();
+                }
+                
+                dgv_absente.Rows.Clear();
+                dgv_note.Rows.Clear();
 
-            for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
-            {
-                DataGridViewRow row = Server.dataGridView2.Rows[i];
-                dgv_absente.Rows.Add();
-                DataGridViewRow row1 = dgv_absente.Rows[i];
-                row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
-                row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
-                row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = Server.dataGridView1.Rows[i];
+                    dgv_note.Rows.Add();
+                    DataGridViewRow row1 = dgv_note.Rows[i];
+                    row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
+                    row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                }
+
+                for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = Server.dataGridView2.Rows[i];
+                    dgv_absente.Rows.Add();
+                    DataGridViewRow row1 = dgv_absente.Rows[i];
+                    row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                    row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                    row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                }
+                dgv_note.CurrentCell = null;
+                dgv_absente.CurrentCell = null;
             }
-            dgv_note.CurrentCell = null;
-            dgv_absente.CurrentCell = null;
+            else MessageBox.Show("Selectati o clasa!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void dgv_note_SelectionChanged(object sender, EventArgs e)

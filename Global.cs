@@ -30,5 +30,8 @@ namespace Catalog
         public static DateTime data_de_sters;
         public static int elev_selectat_id;
         public static Boolean motivat;
+        public static double medie;
+        public static int nrabsente;
+        public static int nrabsentemotivate;
     }
 }
