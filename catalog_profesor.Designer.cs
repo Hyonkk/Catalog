@@ -177,13 +177,14 @@
             this.dgv_absente.Location = new System.Drawing.Point(498, 347);
             this.dgv_absente.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_absente.Name = "dgv_absente";
-            this.dgv_absente.ReadOnly = true;
             this.dgv_absente.RowHeadersVisible = false;
             this.dgv_absente.RowHeadersWidth = 51;
             this.dgv_absente.RowTemplate.Height = 24;
+            this.dgv_absente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_absente.Size = new System.Drawing.Size(475, 200);
             this.dgv_absente.TabIndex = 14;
             this.dgv_absente.TabStop = false;
+            this.dgv_absente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_absente_CellValueChanged);
             this.dgv_absente.SelectionChanged += new System.EventHandler(this.dgv_absente_SelectionChanged);
             // 
             // data_absente
@@ -208,7 +209,6 @@
             this.motivat_absente.HeaderText = "Motivat";
             this.motivat_absente.MinimumWidth = 6;
             this.motivat_absente.Name = "motivat_absente";
-            this.motivat_absente.ReadOnly = true;
             this.motivat_absente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.motivat_absente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -327,19 +327,19 @@
             // lb_data
             // 
             this.lb_data.AutoSize = true;
-            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_data.Location = new System.Drawing.Point(721, 580);
             this.lb_data.Name = "lb_data";
-            this.lb_data.Size = new System.Drawing.Size(0, 31);
+            this.lb_data.Size = new System.Drawing.Size(0, 25);
             this.lb_data.TabIndex = 31;
             // 
             // lb_noab
             // 
             this.lb_noab.AutoSize = true;
-            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_noab.Location = new System.Drawing.Point(721, 622);
             this.lb_noab.Name = "lb_noab";
-            this.lb_noab.Size = new System.Drawing.Size(0, 31);
+            this.lb_noab.Size = new System.Drawing.Size(0, 25);
             this.lb_noab.TabIndex = 32;
             // 
             // sterg_no
@@ -392,7 +392,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(999, 774);
+            this.ClientSize = new System.Drawing.Size(986, 811);
             this.Controls.Add(this.sterg_ab);
             this.Controls.Add(this.reset);
             this.Controls.Add(this.sterg_no);
@@ -431,9 +431,6 @@
         public System.Windows.Forms.DataGridView dgv_absente;
         private System.Windows.Forms.Label clasa;
         public System.Windows.Forms.Button inapoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox CB_noab;
         private System.Windows.Forms.Label label1;
@@ -447,5 +444,8 @@
         public System.Windows.Forms.Button sterg_no;
         public System.Windows.Forms.Button reset;
         public System.Windows.Forms.Button sterg_ab;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
     }
 }

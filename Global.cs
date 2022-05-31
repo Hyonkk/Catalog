@@ -29,5 +29,6 @@ namespace Catalog
         public static DateTime data_selectat;
         public static DateTime data_de_sters;
         public static int elev_selectat_id;
+        public static Boolean motivat;
     }
 }

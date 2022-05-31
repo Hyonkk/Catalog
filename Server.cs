@@ -504,6 +504,17 @@ namespace Catalog
             cmd.ExecuteNonQuery();
         }
 
+        public static void absenta_motivat()
+        {
+            SqlCommand cmd = new SqlCommand("motivatabsenta", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_de_sters;
+            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
+            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.Parameters.Add("@motivat", SqlDbType.VarChar, 50).Value = global.motivat;
+            cmd.ExecuteNonQuery();
+        }
+
         public static ComboBox CB_materii;
         public static ComboBox CB_clase;
         public static DataGridView dataGridView1;
