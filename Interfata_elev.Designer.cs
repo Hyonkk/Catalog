@@ -163,7 +163,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox2.BackColor = System.Drawing.Color.Gold;
             this.pictureBox2.Image = global::Catalog.Properties.Resources.output_onlinepngtools_8_;
-            this.pictureBox2.Location = new System.Drawing.Point(9, 230);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 230);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 102);
