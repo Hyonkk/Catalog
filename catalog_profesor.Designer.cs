@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CB_clase = new System.Windows.Forms.ComboBox();
             this.dgv_elevi = new System.Windows.Forms.DataGridView();
             this.nr_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,9 +102,9 @@
             // 
             // nr_elev
             // 
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.nr_elev.DefaultCellStyle = dataGridViewCellStyle1;
             this.nr_elev.FillWeight = 4F;
             this.nr_elev.HeaderText = "Nr.";
             this.nr_elev.MinimumWidth = 6;
@@ -149,9 +149,9 @@
             // 
             // data_note
             // 
-            dataGridViewCellStyle5.Format = "M";
-            dataGridViewCellStyle5.NullValue = null;
-            this.data_note.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "M";
+            dataGridViewCellStyle2.NullValue = null;
+            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
             this.data_note.HeaderText = "Data";
             this.data_note.MinimumWidth = 6;
             this.data_note.Name = "data_note";
@@ -194,9 +194,9 @@
             // 
             // data_absente
             // 
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_absente.HeaderText = "Data";
             this.data_absente.MinimumWidth = 6;
             this.data_absente.Name = "data_absente";
@@ -239,9 +239,9 @@
             this.inapoi.FlatAppearance.BorderSize = 0;
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inapoi.Location = new System.Drawing.Point(12, 619);
+            this.inapoi.Location = new System.Drawing.Point(12, 689);
             this.inapoi.Name = "inapoi";
-            this.inapoi.Size = new System.Drawing.Size(202, 56);
+            this.inapoi.Size = new System.Drawing.Size(202, 73);
             this.inapoi.TabIndex = 21;
             this.inapoi.TabStop = false;
             this.inapoi.Text = "Inapoi la terminal";
@@ -332,19 +332,19 @@
             // lb_data
             // 
             this.lb_data.AutoSize = true;
-            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_data.Location = new System.Drawing.Point(721, 580);
+            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data.Location = new System.Drawing.Point(672, 584);
             this.lb_data.Name = "lb_data";
-            this.lb_data.Size = new System.Drawing.Size(0, 25);
+            this.lb_data.Size = new System.Drawing.Size(0, 17);
             this.lb_data.TabIndex = 31;
             // 
             // lb_noab
             // 
             this.lb_noab.AutoSize = true;
-            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_noab.Location = new System.Drawing.Point(721, 622);
+            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_noab.Location = new System.Drawing.Point(672, 626);
             this.lb_noab.Name = "lb_noab";
-            this.lb_noab.Size = new System.Drawing.Size(0, 25);
+            this.lb_noab.Size = new System.Drawing.Size(0, 17);
             this.lb_noab.TabIndex = 32;
             // 
             // sterg_no
@@ -396,7 +396,7 @@
             // 
             this.lb_medie.AutoSize = true;
             this.lb_medie.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_medie.Location = new System.Drawing.Point(496, 46);
+            this.lb_medie.Location = new System.Drawing.Point(10, 584);
             this.lb_medie.Name = "lb_medie";
             this.lb_medie.Size = new System.Drawing.Size(102, 31);
             this.lb_medie.TabIndex = 36;
@@ -407,7 +407,7 @@
             // 
             this.lb_med.AutoSize = true;
             this.lb_med.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_med.Location = new System.Drawing.Point(593, 46);
+            this.lb_med.Location = new System.Drawing.Point(107, 584);
             this.lb_med.Name = "lb_med";
             this.lb_med.Size = new System.Drawing.Size(0, 31);
             this.lb_med.TabIndex = 37;
@@ -418,7 +418,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(986, 811);
+            this.ClientSize = new System.Drawing.Size(970, 772);
             this.Controls.Add(this.lb_med);
             this.Controls.Add(this.lb_medie);
             this.Controls.Add(this.sterg_ab);

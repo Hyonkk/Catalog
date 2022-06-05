@@ -50,11 +50,6 @@ namespace Catalog
             dataGridView4.CurrentCell = null;
         }
 
-        private void afis_media_Click(object sender, EventArgs e)
-        {
-            Server.calc_media();
-            medie.Text=Server.medie.Text;
-        }
 
         private void CB_materii_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -141,7 +136,7 @@ namespace Catalog
                 lb_med.Text = "Nu se poate calcula media";
                 if (global.medie != -1)
                 {
-                    lb_med.Text = global.medie.ToString();
+                    lb_med.Text = global.medie.ToString("0.00");
                 }
 
                 lb_abs.Text = global.nrabsente.ToString();

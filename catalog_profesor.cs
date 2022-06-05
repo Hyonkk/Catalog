@@ -63,7 +63,7 @@ namespace Catalog
                 lb_med.Visible = true;
                 if (global.medie != -1)
                 {
-                    lb_med.Text = global.medie.ToString();
+                    lb_med.Text = global.medie.ToString("0.00");
                 }
                 
                 dgv_absente.Rows.Clear();
@@ -113,7 +113,9 @@ namespace Catalog
 
                 Server.no_incarc();
                 Server.afis_note_profesori_();
+                Server.afis_media();
 
+                lb_med.Text = global.medie.ToString("0.00");
                 dgv_note.Rows.Clear();
 
                 for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
@@ -174,6 +176,9 @@ namespace Catalog
             global.data_de_sters = Convert.ToDateTime(dgv_note.SelectedCells[0].Value);
             Server.nota_delete();
             Server.afis_note_profesori_();
+            Server.afis_media();
+
+            lb_med.Text = global.medie.ToString("0.00");
 
             dgv_note.Rows.Clear();
 
