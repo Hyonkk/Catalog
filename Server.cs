@@ -336,6 +336,7 @@ namespace Catalog
             SqlCommand cmd = new SqlCommand("GetClase", sqlCon);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("prof", SqlDbType.VarChar, 50).Value = global.nume_default;
+            cmd.Parameters.Add("disciplina", SqlDbType.VarChar, 50).Value = global.disciplina_input;
             SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sqlDa.Fill(dt);
@@ -575,8 +576,38 @@ namespace Catalog
             }
         }
 
+        public static void get_disc_id_prof()
+        {
+            CB_discipline = new ComboBox();
+            SqlCommand cmd = new SqlCommand("DisciplineProfesor", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@prof", SqlDbType.VarChar, 50).Value = global.nume_default;
+            SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlDa.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                CB_discipline.Items.Add(Convert.ToString(dt.Rows[i]["denumire"]));
+            }
+        }
+
+        public static void disciplina_to_id()
+        {
+            SqlCommand cmd = new SqlCommand("DisciplinaToId", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@nume", SqlDbType.VarChar, 50).Value = global.materie_selectata;
+            SqlDataAdapter sqlda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlda.Fill(dt);
+            for(int i=0;i< dt.Rows.Count;i++)
+            {
+                global.materie_selectata_id = Convert.ToInt32(dt.Rows[i]["id_disciplina"]);
+            }
+        }
+
         public static ComboBox CB_materii;
         public static ComboBox CB_clase;
+        public static ComboBox CB_discipline;
         public static DataGridView dataGridView1;
         public static Button inapoi;
         public static Button afis_note;

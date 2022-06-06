@@ -17,9 +17,9 @@ namespace Catalog
         {
             InitializeComponent();
             this.CenterToScreen();
-            Server.get_clase();
             Server.get_materie_for_prof();
-            CB_clase.Items.AddRange(Server.CB_clase.Items.Cast<Object>().ToArray());
+            Server.get_disc_id_prof();
+            CB_disciplina.Items.AddRange(Server.CB_discipline.Items.Cast<Object>().ToArray());
         }
 
         private void inapoi_Click(object sender, EventArgs e)
@@ -128,6 +128,8 @@ namespace Catalog
                 }
                 lb_data.Text = "";
                 lb_noab.Text = "";
+                dateTimePicker1.Text = "";
+                CB_noab.Text = "";
             }
         }
 
@@ -156,6 +158,8 @@ namespace Catalog
 
                 lb_data.Text = "";
                 lb_noab.Text = "";
+                dateTimePicker1.Text = "";
+                CB_noab.Text = "";
             }
         }
 
@@ -236,6 +240,16 @@ namespace Catalog
                 row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
                 row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
             }
+        }
+
+        private void CB_disciplina_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            global.disciplina_input = CB_disciplina.Text;
+            global.materie_selectata = CB_disciplina.Text;
+            Server.get_clase();
+            Server.disciplina_to_id();
+            CB_clase.Items.Clear();
+            CB_clase.Items.AddRange(Server.CB_clase.Items.Cast<Object>().ToArray());
         }
     }
 }
