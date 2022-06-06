@@ -417,7 +417,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
-            this.ClientSize = new System.Drawing.Size(984, 687);
+            this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.lb_abs_nemotivate);
             this.Controls.Add(this.lb_absente_nemotivate);
             this.Controls.Add(this.lb_abs_motivate);

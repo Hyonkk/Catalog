@@ -35,9 +35,7 @@
             this.logout = new System.Windows.Forms.Button();
             this.catalog = new System.Windows.Forms.Button();
             this.setari = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,18 +143,6 @@
             this.setari.UseVisualStyleBackColor = false;
             this.setari.Click += new System.EventHandler(this.setari_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pictureBox1.BackgroundImage = global::Catalog.Properties.Resources.output_onlinepngtools__26_;
-            this.pictureBox1.Location = new System.Drawing.Point(-568, -260);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1920, 1080);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -174,6 +160,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BackgroundImage = global::Catalog.Properties.Resources.output_onlinepngtools__26_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.clasa);
@@ -182,13 +170,12 @@
             this.Controls.Add(this.catalog);
             this.Controls.Add(this.setari);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ter_elev";
             this.Text = "Terminal Elev";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,7 +188,6 @@
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Label eticheta_nume;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label clasa;
         private System.Windows.Forms.PictureBox pictureBox2;
     }

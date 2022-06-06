@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="catalog_dirigentie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="catalog_dirigentie.Designer.cs">
+      <DependentUpon>catalog_dirigentie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="catalog_diriginte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="catalog_diriginte.Designer.cs">
+      <DependentUpon>catalog_diriginte.cs</DependentUpon>
+    </Compile>
     <Compile Include="catalog_profesor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +111,12 @@
     <Compile Include="Interfata_profesor.Designer.cs">
       <DependentUpon>Interfata_profesor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="catalog_dirigentie.resx">
+      <DependentUpon>catalog_dirigentie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="catalog_diriginte.resx">
+      <DependentUpon>catalog_diriginte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="catalog_elev.resx">
       <DependentUpon>catalog_elev.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +174,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NewFile1.txt" />
+    <None Include="Resources\output-onlinepngtools %2835%291.png" />
+    <None Include="Resources\output-onlinepngtools %2835%29.png" />
+    <None Include="Resources\output-onlinepngtools %2833%29.png" />
+    <None Include="Resources\output-onlinepngtools %2831%29.png" />
     <None Include="Resources\output-onlinepngtools %2828%29.png" />
     <None Include="Resources\output-onlinepngtools %2826%29.png" />
     <None Include="Resources\output-onlinepngtools %2825%29.png" />

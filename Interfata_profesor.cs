@@ -46,5 +46,13 @@ namespace Catalog
             global.F_curent.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            global.F_curent = new catalog_diriginte();
+            this.Hide();
+            global.F_curent.ShowDialog();
+            this.Close();
+        }
     }
 }
