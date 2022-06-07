@@ -34,5 +34,6 @@ namespace Catalog
         public static int nrabsente;
         public static int nrabsentemotivate;
         public static string disciplina_input;
+        public static string diriginte;
     }
 }

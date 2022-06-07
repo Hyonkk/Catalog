@@ -50,11 +50,12 @@
             this.lb_noab = new System.Windows.Forms.Label();
             this.lb_data = new System.Windows.Forms.Label();
             this.b_ab = new System.Windows.Forms.Button();
-            this.b_no = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.CB_noab = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lb_med = new System.Windows.Forms.Label();
+            this.lb_medie = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -102,6 +103,7 @@
             this.CB_disciplina.Size = new System.Drawing.Size(360, 28);
             this.CB_disciplina.TabIndex = 41;
             this.CB_disciplina.TabStop = false;
+            this.CB_disciplina.SelectedIndexChanged += new System.EventHandler(this.CB_disciplina_SelectedIndexChanged);
             // 
             // dgv_elevi
             // 
@@ -126,6 +128,7 @@
             this.dgv_elevi.Size = new System.Drawing.Size(475, 450);
             this.dgv_elevi.TabIndex = 42;
             this.dgv_elevi.TabStop = false;
+            this.dgv_elevi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_elevi_CellClick);
             // 
             // nr_elev
             // 
@@ -215,6 +218,7 @@
             this.dgv_absente.Size = new System.Drawing.Size(475, 200);
             this.dgv_absente.TabIndex = 44;
             this.dgv_absente.TabStop = false;
+            this.dgv_absente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_absente_CellValueChanged);
             // 
             // data_absente
             // 
@@ -254,6 +258,7 @@
             this.sterg_ab.TabStop = false;
             this.sterg_ab.Text = "Sterge absenta";
             this.sterg_ab.UseVisualStyleBackColor = false;
+            this.sterg_ab.Click += new System.EventHandler(this.sterg_ab_Click);
             // 
             // reset
             // 
@@ -268,6 +273,7 @@
             this.reset.TabStop = false;
             this.reset.Text = "Resetare";
             this.reset.UseVisualStyleBackColor = false;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
             // 
             // lb_noab
             // 
@@ -293,27 +299,14 @@
             this.b_ab.FlatAppearance.BorderSize = 0;
             this.b_ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_ab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.b_ab.Location = new System.Drawing.Point(770, 691);
+            this.b_ab.Location = new System.Drawing.Point(718, 691);
             this.b_ab.Name = "b_ab";
             this.b_ab.Size = new System.Drawing.Size(160, 73);
             this.b_ab.TabIndex = 52;
             this.b_ab.TabStop = false;
             this.b_ab.Text = "Adauga absenta";
             this.b_ab.UseVisualStyleBackColor = false;
-            // 
-            // b_no
-            // 
-            this.b_no.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.b_no.FlatAppearance.BorderSize = 0;
-            this.b_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.b_no.Location = new System.Drawing.Point(578, 691);
-            this.b_no.Name = "b_no";
-            this.b_no.Size = new System.Drawing.Size(160, 73);
-            this.b_no.TabIndex = 51;
-            this.b_no.TabStop = false;
-            this.b_no.Text = "Adauga nota";
-            this.b_no.UseVisualStyleBackColor = false;
+            this.b_ab.Click += new System.EventHandler(this.b_ab_Click);
             // 
             // label2
             // 
@@ -355,6 +348,7 @@
             this.CB_noab.Name = "CB_noab";
             this.CB_noab.Size = new System.Drawing.Size(31, 21);
             this.CB_noab.TabIndex = 48;
+            this.CB_noab.SelectedIndexChanged += new System.EventHandler(this.CB_noab_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -363,6 +357,28 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(17, 20);
             this.dateTimePicker1.TabIndex = 47;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // lb_med
+            // 
+            this.lb_med.AutoSize = true;
+            this.lb_med.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_med.Location = new System.Drawing.Point(112, 584);
+            this.lb_med.Name = "lb_med";
+            this.lb_med.Size = new System.Drawing.Size(0, 31);
+            this.lb_med.TabIndex = 56;
+            this.lb_med.Visible = false;
+            // 
+            // lb_medie
+            // 
+            this.lb_medie.AutoSize = true;
+            this.lb_medie.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_medie.Location = new System.Drawing.Point(10, 584);
+            this.lb_medie.Name = "lb_medie";
+            this.lb_medie.Size = new System.Drawing.Size(102, 31);
+            this.lb_medie.TabIndex = 55;
+            this.lb_medie.Text = "Media: ";
+            this.lb_medie.Visible = false;
             // 
             // catalog_diriginte
             // 
@@ -370,10 +386,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(984, 776);
+            this.Controls.Add(this.lb_med);
+            this.Controls.Add(this.lb_medie);
             this.Controls.Add(this.lb_noab);
             this.Controls.Add(this.lb_data);
             this.Controls.Add(this.b_ab);
-            this.Controls.Add(this.b_no);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CB_noab);
@@ -417,10 +434,11 @@
         private System.Windows.Forms.Label lb_noab;
         private System.Windows.Forms.Label lb_data;
         public System.Windows.Forms.Button b_ab;
-        public System.Windows.Forms.Button b_no;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CB_noab;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lb_med;
+        private System.Windows.Forms.Label lb_medie;
     }
 }

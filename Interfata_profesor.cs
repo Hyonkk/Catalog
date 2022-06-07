@@ -17,6 +17,9 @@ namespace Catalog
             InitializeComponent();
             creare_nume();
             this.CenterToScreen();
+            Server.verif_diriginte();
+            if (!String.Equals(global.diriginte,null)) button1.Visible = true;
+            else button1.Visible = false;
         }
 
         private void creare_nume()

@@ -605,6 +605,19 @@ namespace Catalog
             }
         }
 
+        public static void verif_diriginte()
+        {
+            SqlCommand cmd = new SqlCommand("verifdiriginte", sqlCon);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@nume", SqlDbType.VarChar, 50).Value = global.nume_default;
+            SqlDataAdapter sqlda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sqlda.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                global.diriginte = Convert.ToString(dt.Rows[i]["Clasa"]);
+            }
+        }
         public static ComboBox CB_materii;
         public static ComboBox CB_clase;
         public static ComboBox CB_discipline;
