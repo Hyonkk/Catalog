@@ -36,13 +36,13 @@ namespace Catalog
             
         }
 
-        private void login_final_click(object sender, EventArgs e)
+        private async void login_final_clickAsync(object sender, EventArgs e)
         {
             global.nume_curent = username.Text;
             global.parola_curenta = password.Text;
             if (global.ctr_log == 1)
             {
-                Server.conectare_elev();
+                await Server.conectare_elevAsync();
                 if (Server.ctr == 1)
                 {
                     global.F_curent = new ter_elev();

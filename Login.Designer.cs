@@ -159,7 +159,7 @@ namespace Catalog
             this.login_final.TabStop = false;
             this.login_final.Text = "Conectare";
             this.login_final.UseVisualStyleBackColor = false;
-            this.login_final.Click += new System.EventHandler(this.login_final_click);
+            this.login_final.Click += new System.EventHandler(this.login_final_clickAsync);
             // 
             // inapoi
             // 

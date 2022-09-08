@@ -7,6 +7,10 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 using System.Configuration;
+using System.Net.Http.Headers;
+using System.Net.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Catalog
 {
@@ -16,10 +20,10 @@ namespace Catalog
         public static string connectionString = @"Data Source=serveratestatinfo.tplinkdns.com,1435;Initial Catalog=DataBase;Persist Security Info=True;User ID=admin;Password=sebastian2004";
         public static SqlConnection sqlCon = new SqlConnection(connectionString);
 
-        public static void conectare_elev()
+        public static async Task conectare_elevAsync()
         {
             ctr = 0;
-
+            /*
                 SqlCommand cmd = new SqlCommand("UserSearchElev", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
@@ -44,6 +48,23 @@ namespace Catalog
                     global.clasa_curenta = Convert.ToString(cmd.Parameters["@clasa"].Value);
                 }
                 else ctr = 0;
+            */
+            string name = global.nume_curent;
+            string parola = global.parola_curenta;
+            string url = "https://localhost:7125/api/Login/Login/LoginElev?" + "nume=" + name + "&" + "parola=" + parola;
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(url);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
+                            Convert.ToBase64String(Encoding.Default.GetBytes("duta:1")));
+            HttpResponseMessage response = await client.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                string content = response.Content.ReadAsStringAsync().Result;
+                ClsNumD x = JsonConvert.DeserializeObject<ClsNumD>(content);
+                if (Equals(x.check, "1")) ctr = 1;
+                global.nume_default = x.mainBody[0].Nume_Default;
+                global.clasa_curenta = x.mainBody[0].Clasa;
+            }
             
         }
 
@@ -205,8 +226,7 @@ namespace Catalog
                 {
                     int rowId = dataGridView1.Rows.Add();
                     DataGridViewRow row = dataGridView1.Rows[rowId];
-                    string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
-                    row.Cells["data_note"].Value = data_corecta;
+                    row.Cells["data_note"].Value = dt.Rows[i]["data"].ToString();
                     row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
                 }
             }
@@ -237,9 +257,8 @@ namespace Catalog
                 {
                     int rowId = dataGridView3.Rows.Add();
                     DataGridViewRow row = dataGridView3.Rows[rowId];
-                    string data_corecta = dt3.Rows[i]["data"].ToString().Substring(0, dt3.Rows[i]["data"].ToString().IndexOf(" "));
                     row.Cells["denumire_note_total"].Value = dt3.Rows[i]["denumire"].ToString();
-                    row.Cells["data_note_total"].Value = data_corecta;
+                    row.Cells["data_note_total"].Value = dt3.Rows[i]["data"].ToString();
                     row.Cells["nota_note_total"].Value = dt3.Rows[i]["note"].ToString();
 
                 }
@@ -272,8 +291,7 @@ namespace Catalog
                 {
                     int rowId = dataGridView2.Rows.Add();
                     DataGridViewRow row = dataGridView2.Rows[rowId];
-                    string data_corecta = dt1.Rows[i]["data"].ToString().Substring(0, dt1.Rows[i]["data"].ToString().IndexOf(" "));
-                    row.Cells["data_absente"].Value = data_corecta;
+                    row.Cells["data_absente"].Value = dt1.Rows[i]["data"].ToString();
                     row.Cells["absenta_absente"].Value = dt1.Rows[i]["absente"].ToString();
                     row.Cells["motivat_absente"].Value = dt1.Rows[i]["motivat"].ToString();
                 }
@@ -305,9 +323,8 @@ namespace Catalog
                 {
                     int rowId = dataGridView4.Rows.Add();
                     DataGridViewRow row = dataGridView4.Rows[rowId];
-                    string data_corecta = dt1.Rows[i]["data"].ToString().Substring(0, dt1.Rows[i]["data"].ToString().IndexOf(" "));
                     row.Cells["denumire_absente_total"].Value = dt1.Rows[i]["denumire"].ToString();
-                    row.Cells["data_absente_total"].Value = data_corecta;
+                    row.Cells["data_absente_total"].Value = dt1.Rows[i]["data"].ToString();
                     row.Cells["absenta_absente_total"].Value = dt1.Rows[i]["absente"].ToString();
                     row.Cells["motivat_absente_total"].Value = dt1.Rows[i]["motivat"];
                 }
@@ -407,8 +424,7 @@ namespace Catalog
                 {
                     int rowId = dataGridView1.Rows.Add();
                     DataGridViewRow row = dataGridView1.Rows[rowId];
-                    string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
-                    row.Cells["data_note"].Value = data_corecta;
+                    row.Cells["data_note"].Value = dt.Rows[i]["data"].ToString();
                     row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
                 }
             }
@@ -440,8 +456,7 @@ namespace Catalog
                 {
                     int rowId = dataGridView2.Rows.Add();
                     DataGridViewRow row = dataGridView2.Rows[rowId];
-                    string data_corecta = dt1.Rows[i]["data"].ToString().Substring(0, dt1.Rows[i]["data"].ToString().IndexOf(" "));
-                    row.Cells["data_absente"].Value = data_corecta;
+                    row.Cells["data_absente"].Value = dt1.Rows[i]["data"].ToString();
                     row.Cells["absenta_absente"].Value = dt1.Rows[i]["absente"].ToString();
                     row.Cells["motivat_absente"].Value = dt1.Rows[i]["motivat"].ToString();
                 }

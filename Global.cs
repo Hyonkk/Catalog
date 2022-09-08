@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,5 +37,16 @@ namespace Catalog
         public static int nrabsentemotivate;
         public static string disciplina_input;
         public static string diriginte;
+    }
+
+    public class ClsNumD
+    {
+        public string check { get; set; }
+        public List<MainBody> mainBody { get; set; }
+    }
+    public class MainBody
+    {
+        public string Clasa { get; set; }
+        public string Nume_Default { get; set; }
     }
 }
