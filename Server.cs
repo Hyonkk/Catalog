@@ -205,8 +205,8 @@ namespace Catalog
                 {
                     int rowId = dataGridView1.Rows.Add();
                     DataGridViewRow row = dataGridView1.Rows[rowId];
-                    string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
-                    row.Cells["data_note"].Value = data_corecta;
+                    //string data_corecta = dt.Rows[i]["data"].ToString().Substring(0, dt.Rows[i]["data"].ToString().IndexOf(" "));
+                    row.Cells["data_note"].Value = dt.Rows[i]["data"].ToString();
                     row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
                 }
             }
