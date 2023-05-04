@@ -35,6 +35,7 @@ namespace Catalog
 
         private void logout_Click(object sender, EventArgs e)
         {
+            global.diriginte = null;
             global.F_curent = new login();
             this.Hide();
             global.F_curent.ShowDialog();

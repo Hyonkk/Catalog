@@ -23,7 +23,6 @@ namespace Catalog
         public static async Task conectare_elevAsync()
         {
             ctr = 0;
-            /*
                 SqlCommand cmd = new SqlCommand("UserSearchElev", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 //SqlDataAdapter sqlDa = new SqlDataAdapter(cmd);
@@ -41,30 +40,13 @@ namespace Catalog
                 cmd.ExecuteNonQuery();
                                 
                 int returnvalue = Convert.ToInt32(cmd.Parameters["@exist"].Value);
-                if (returnvalue == 1)
-                {
-                    ctr = 1;
-                    global.nume_default = Convert.ToString(cmd.Parameters["@nume_default"].Value);
-                    global.clasa_curenta = Convert.ToString(cmd.Parameters["@clasa"].Value);
-                }
-                else ctr = 0;
-            */
-            string name = global.nume_curent;
-            string parola = global.parola_curenta;
-            string url = "https://localhost:7125/api/Login/Login/LoginElev?" + "nume=" + name + "&" + "parola=" + parola;
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(url);
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic",
-                            Convert.ToBase64String(Encoding.Default.GetBytes("duta:1")));
-            HttpResponseMessage response = await client.GetAsync(url);
-            if (response.IsSuccessStatusCode)
+            if (returnvalue == 1)
             {
-                string content = response.Content.ReadAsStringAsync().Result;
-                ClsNumD x = JsonConvert.DeserializeObject<ClsNumD>(content);
-                if (Equals(x.check, "1")) ctr = 1;
-                global.nume_default = x.mainBody[0].Nume_Default;
-                global.clasa_curenta = x.mainBody[0].Clasa;
+                ctr = 1;
+                global.nume_default = Convert.ToString(cmd.Parameters["@nume_default"].Value);
+                global.clasa_curenta = Convert.ToString(cmd.Parameters["@clasa"].Value);
             }
+            else ctr = 0;
             
         }
 
