@@ -46,7 +46,6 @@
             this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.sterg_ab = new System.Windows.Forms.Button();
-            this.reset = new System.Windows.Forms.Button();
             this.lb_noab = new System.Windows.Forms.Label();
             this.lb_data = new System.Windows.Forms.Label();
             this.b_ab = new System.Windows.Forms.Button();
@@ -260,21 +259,6 @@
             this.sterg_ab.UseVisualStyleBackColor = false;
             this.sterg_ab.Click += new System.EventHandler(this.sterg_ab_Click);
             // 
-            // reset
-            // 
-            this.reset.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.reset.FlatAppearance.BorderSize = 0;
-            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.reset.Location = new System.Drawing.Point(864, 302);
-            this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(108, 40);
-            this.reset.TabIndex = 46;
-            this.reset.TabStop = false;
-            this.reset.Text = "Resetare";
-            this.reset.UseVisualStyleBackColor = false;
-            this.reset.Click += new System.EventHandler(this.reset_Click);
-            // 
             // lb_noab
             // 
             this.lb_noab.AutoSize = true;
@@ -395,7 +379,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CB_noab);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.reset);
             this.Controls.Add(this.sterg_ab);
             this.Controls.Add(this.dgv_absente);
             this.Controls.Add(this.dgv_note);
@@ -430,7 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
         public System.Windows.Forms.Button sterg_ab;
-        public System.Windows.Forms.Button reset;
         private System.Windows.Forms.Label lb_noab;
         private System.Windows.Forms.Label lb_data;
         public System.Windows.Forms.Button b_ab;
