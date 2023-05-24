@@ -36,6 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,17 +44,15 @@
             // 
             this.eticheta_nume.AutoSize = true;
             this.eticheta_nume.BackColor = System.Drawing.Color.RoyalBlue;
-            this.eticheta_nume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.eticheta_nume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eticheta_nume.Font = new System.Drawing.Font("Georgia", 20F);
             this.eticheta_nume.ForeColor = System.Drawing.SystemColors.Control;
-            this.eticheta_nume.Image = global::Catalog.Properties.Resources.output_onlinepngtools__14_;
             this.eticheta_nume.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eticheta_nume.Location = new System.Drawing.Point(12, 9);
-            this.eticheta_nume.MaximumSize = new System.Drawing.Size(200, 813);
-            this.eticheta_nume.MinimumSize = new System.Drawing.Size(200, 116);
+            this.eticheta_nume.Location = new System.Drawing.Point(72, 9);
+            this.eticheta_nume.MaximumSize = new System.Drawing.Size(200, 116);
+            this.eticheta_nume.MinimumSize = new System.Drawing.Size(140, 116);
             this.eticheta_nume.Name = "eticheta_nume";
-            this.eticheta_nume.Size = new System.Drawing.Size(200, 116);
+            this.eticheta_nume.Size = new System.Drawing.Size(140, 116);
             this.eticheta_nume.TabIndex = 14;
             this.eticheta_nume.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -162,6 +161,23 @@
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Georgia", 20F);
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Image = global::Catalog.Properties.Resources.output_onlinepngtools__14_;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.MaximumSize = new System.Drawing.Size(200, 813);
+            this.label2.MinimumSize = new System.Drawing.Size(200, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(200, 116);
+            this.label2.TabIndex = 22;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ter_profesor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,9 +186,10 @@
             this.BackgroundImage = global::Catalog.Properties.Resources.output_onlinepngtools__26_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.eticheta_nume);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.eticheta_nume);
             this.Controls.Add(this.catalog);
             this.Controls.Add(this.logout);
             this.Controls.Add(this.setari);
@@ -196,5 +213,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
     }
 }

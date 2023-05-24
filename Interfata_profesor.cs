@@ -25,6 +25,8 @@ namespace Catalog
         private void creare_nume()
         {
             eticheta_nume.Text = global.nume_default;
+            label1.Width = eticheta_nume.Size.Width + 95;
+            button1.Width += eticheta_nume.Size.Width - 140;
         }
 
         private void setari_Click(object sender, EventArgs e)
