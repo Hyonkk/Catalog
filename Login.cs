@@ -12,6 +12,8 @@ namespace Catalog
 {
     public partial class login : Form
     {
+        private Rectangle OriginalSize;
+        private Rectangle OriginalButton;
         public login()
         {
             InitializeComponent();
@@ -136,6 +138,35 @@ namespace Catalog
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void resizeControls(Rectangle r,Control c)
+        {
+            float xRatio = (float)(this.Width) / (float)(OriginalSize.Width);
+            float yRatio = (float)(this.Height) / (float)(OriginalSize.Height);
+
+            int newX=(int)(xRatio*r.Location.X);
+            int newY=(int)(yRatio*r.Location.Y);
+
+            int newWidth= (int)(xRatio*r.Width);
+            int newHeight= (int)(yRatio*r.Height);
+
+            c.Location=new Point(newX,newY);
+            c.Size=new Size(newWidth, newHeight);
+            int a = 1;
+        }
+
+        private void login_Resize(object sender, EventArgs e)
+        {
+            //login_elev.Size = new Size((int)(this.Size.Width/5.6), this.Size.Height/10);
+            //login_prof.Size = new Size((int)(this.Size.Width / 5.6), this.Size.Height / 10);
+            resizeControls(OriginalButton, login_elev);
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+            OriginalSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
+            OriginalButton = new Rectangle(login_elev.Location.X, login_elev.Location.Y, login_elev.Size.Width, login_elev.Size.Height);
         }
     }
 }

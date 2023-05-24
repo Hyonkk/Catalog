@@ -47,7 +47,7 @@ namespace Catalog
             // titlu
             // 
             this.titlu.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.titlu.BackColor = System.Drawing.Color.RoyalBlue;
+            this.titlu.BackColor = System.Drawing.Color.CornflowerBlue;
             this.titlu.Font = new System.Drawing.Font("Georgia", 20F, System.Drawing.FontStyle.Italic);
             this.titlu.Location = new System.Drawing.Point(-618, 0);
             this.titlu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -59,15 +59,16 @@ namespace Catalog
             // 
             // login_elev
             // 
-            this.login_elev.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.login_elev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.login_elev.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.login_elev.BackColor = System.Drawing.Color.CornflowerBlue;
             this.login_elev.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_elev.FlatAppearance.BorderSize = 0;
             this.login_elev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_elev.Font = new System.Drawing.Font("Georgia", 13F);
             this.login_elev.Location = new System.Drawing.Point(144, 338);
+            this.login_elev.Margin = new System.Windows.Forms.Padding(50);
             this.login_elev.Name = "login_elev";
-            this.login_elev.Size = new System.Drawing.Size(123, 56);
+            this.login_elev.Size = new System.Drawing.Size(125, 50);
             this.login_elev.TabIndex = 2;
             this.login_elev.TabStop = false;
             this.login_elev.Text = "Elev";
@@ -76,15 +77,17 @@ namespace Catalog
             // 
             // login_prof
             // 
-            this.login_prof.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.login_prof.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.login_prof.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.login_prof.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.login_prof.BackColor = System.Drawing.Color.CornflowerBlue;
             this.login_prof.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_prof.FlatAppearance.BorderSize = 0;
             this.login_prof.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_prof.Font = new System.Drawing.Font("Georgia", 13F);
             this.login_prof.Location = new System.Drawing.Point(417, 338);
+            this.login_prof.Margin = new System.Windows.Forms.Padding(50);
             this.login_prof.Name = "login_prof";
-            this.login_prof.Size = new System.Drawing.Size(123, 56);
+            this.login_prof.Size = new System.Drawing.Size(125, 50);
             this.login_prof.TabIndex = 3;
             this.login_prof.TabStop = false;
             this.login_prof.Text = "Profesor";
@@ -146,15 +149,15 @@ namespace Catalog
             // 
             // login_final
             // 
-            this.login_final.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.login_final.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.login_final.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.login_final.BackColor = System.Drawing.Color.CornflowerBlue;
             this.login_final.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login_final.FlatAppearance.BorderSize = 0;
             this.login_final.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_final.Font = new System.Drawing.Font("Georgia", 13F);
             this.login_final.Location = new System.Drawing.Point(417, 338);
             this.login_final.Name = "login_final";
-            this.login_final.Size = new System.Drawing.Size(123, 56);
+            this.login_final.Size = new System.Drawing.Size(125, 50);
             this.login_final.TabIndex = 8;
             this.login_final.TabStop = false;
             this.login_final.Text = "Conectare";
@@ -164,7 +167,7 @@ namespace Catalog
             // inapoi
             // 
             this.inapoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.inapoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.inapoi.BackColor = System.Drawing.Color.CornflowerBlue;
             this.inapoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.inapoi.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.inapoi.FlatAppearance.BorderSize = 0;
@@ -172,7 +175,7 @@ namespace Catalog
             this.inapoi.Font = new System.Drawing.Font("Georgia", 13F);
             this.inapoi.Location = new System.Drawing.Point(144, 338);
             this.inapoi.Name = "inapoi";
-            this.inapoi.Size = new System.Drawing.Size(123, 56);
+            this.inapoi.Size = new System.Drawing.Size(125, 50);
             this.inapoi.TabIndex = 9;
             this.inapoi.TabStop = false;
             this.inapoi.Text = "Înapoi";
@@ -194,17 +197,19 @@ namespace Catalog
             this.desktop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.desktop.Font = new System.Drawing.Font("Georgia", 30F);
             this.desktop.Location = new System.Drawing.Point(622, 399);
+            this.desktop.Margin = new System.Windows.Forms.Padding(50);
             this.desktop.Name = "desktop";
             this.desktop.Size = new System.Drawing.Size(50, 50);
             this.desktop.TabIndex = 11;
             this.desktop.TabStop = false;
             this.desktop.UseVisualStyleBackColor = false;
+            this.desktop.Visible = false;
             this.desktop.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.pictureBox1.Image = global::Catalog.Properties.Resources.output_onlinepngtools_8_;
             this.pictureBox1.Location = new System.Drawing.Point(584, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -217,7 +222,7 @@ namespace Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gold;
+            this.BackColor = System.Drawing.Color.Orange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(684, 461);
             this.Controls.Add(this.desktop);
@@ -231,11 +236,13 @@ namespace Catalog
             this.Controls.Add(this.login_elev);
             this.Controls.Add(this.titlu);
             this.Controls.Add(this.login_final);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.KeyPreview = true;
             this.Name = "login";
             this.Text = "Log-in";
+            this.Load += new System.EventHandler(this.login_Load);
+            this.Resize += new System.EventHandler(this.login_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

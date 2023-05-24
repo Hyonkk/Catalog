@@ -37,13 +37,14 @@
             this.setari = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.BackColor = System.Drawing.Color.Gold;
+            this.label1.BackColor = System.Drawing.Color.Orange;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(-8, -260);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
@@ -53,8 +54,7 @@
             // 
             // clasa
             // 
-            this.clasa.BackColor = System.Drawing.Color.RoyalBlue;
-            this.clasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.clasa.BackColor = System.Drawing.Color.CornflowerBlue;
             this.clasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clasa.Font = new System.Drawing.Font("Georgia", 20F);
             this.clasa.ForeColor = System.Drawing.SystemColors.Control;
@@ -62,14 +62,14 @@
             this.clasa.Location = new System.Drawing.Point(12, 131);
             this.clasa.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.clasa.Name = "clasa";
-            this.clasa.Size = new System.Drawing.Size(200, 60);
+            this.clasa.Size = new System.Drawing.Size(160, 60);
             this.clasa.TabIndex = 17;
             this.clasa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // eticheta_nume
             // 
             this.eticheta_nume.AutoSize = true;
-            this.eticheta_nume.BackColor = System.Drawing.Color.RoyalBlue;
+            this.eticheta_nume.BackColor = System.Drawing.Color.CornflowerBlue;
             this.eticheta_nume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eticheta_nume.Font = new System.Drawing.Font("Georgia", 20F);
             this.eticheta_nume.ForeColor = System.Drawing.SystemColors.Control;
@@ -85,7 +85,7 @@
             // logout
             // 
             this.logout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.logout.BackColor = System.Drawing.Color.RoyalBlue;
+            this.logout.BackColor = System.Drawing.Color.CornflowerBlue;
             this.logout.FlatAppearance.BorderSize = 0;
             this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logout.Font = new System.Drawing.Font("Georgia", 19F);
@@ -105,7 +105,7 @@
             // catalog
             // 
             this.catalog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.catalog.BackColor = System.Drawing.Color.RoyalBlue;
+            this.catalog.BackColor = System.Drawing.Color.CornflowerBlue;
             this.catalog.FlatAppearance.BorderSize = 0;
             this.catalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.catalog.Font = new System.Drawing.Font("Georgia", 19F);
@@ -125,7 +125,7 @@
             // setari
             // 
             this.setari.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.setari.BackColor = System.Drawing.Color.RoyalBlue;
+            this.setari.BackColor = System.Drawing.Color.CornflowerBlue;
             this.setari.FlatAppearance.BorderSize = 0;
             this.setari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.setari.Font = new System.Drawing.Font("Georgia", 19F);
@@ -146,7 +146,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Gold;
+            this.pictureBox2.BackColor = System.Drawing.Color.Orange;
             this.pictureBox2.Image = global::Catalog.Properties.Resources.output_onlinepngtools_8_;
             this.pictureBox2.Location = new System.Drawing.Point(12, 230);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
@@ -158,7 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Georgia", 20F);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
@@ -172,13 +172,26 @@
             this.label2.TabIndex = 19;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Georgia", 10F);
+            this.label3.Location = new System.Drawing.Point(637, 535);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(135, 17);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Designed by Freepik";
+            // 
             // ter_elev
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.BackgroundImage = global::Catalog.Properties.Resources.output_onlinepngtools__26_;
+            this.BackgroundImage = global::Catalog.Properties.Resources._7486161;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.eticheta_nume);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox2);
@@ -208,5 +221,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

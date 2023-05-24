@@ -52,7 +52,7 @@
             // 
             // schimba_username
             // 
-            this.schimba_username.BackColor = System.Drawing.Color.RoyalBlue;
+            this.schimba_username.BackColor = System.Drawing.Color.CornflowerBlue;
             this.schimba_username.FlatAppearance.BorderSize = 0;
             this.schimba_username.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.schimba_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,7 +68,7 @@
             // 
             // schimba_parola
             // 
-            this.schimba_parola.BackColor = System.Drawing.Color.RoyalBlue;
+            this.schimba_parola.BackColor = System.Drawing.Color.CornflowerBlue;
             this.schimba_parola.FlatAppearance.BorderSize = 0;
             this.schimba_parola.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.schimba_parola.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,7 +84,7 @@
             // 
             // exit
             // 
-            this.exit.BackColor = System.Drawing.Color.RoyalBlue;
+            this.exit.BackColor = System.Drawing.Color.CornflowerBlue;
             this.exit.FlatAppearance.BorderSize = 0;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,7 +160,7 @@
             // 
             // inapoi
             // 
-            this.inapoi.BackColor = System.Drawing.Color.RoyalBlue;
+            this.inapoi.BackColor = System.Drawing.Color.CornflowerBlue;
             this.inapoi.FlatAppearance.BorderSize = 0;
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,7 +189,7 @@
             // 
             // finish
             // 
-            this.finish.BackColor = System.Drawing.Color.RoyalBlue;
+            this.finish.BackColor = System.Drawing.Color.CornflowerBlue;
             this.finish.FlatAppearance.BorderSize = 0;
             this.finish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finish.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(625, 442);
             this.Controls.Add(this.vezi2);
             this.Controls.Add(this.vezi1);

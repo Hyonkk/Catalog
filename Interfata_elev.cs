@@ -25,6 +25,9 @@ namespace Catalog
         {
             eticheta_nume.Text = global.nume_default;
             label1.Width = eticheta_nume.Size.Width + 95;
+            catalog.Width += eticheta_nume.Size.Width - 140;
+            setari.Width += eticheta_nume.Size.Width - 140;
+            logout.Width += eticheta_nume.Size.Width - 140;
         }
 
         private void setari_Click(object sender, EventArgs e)
