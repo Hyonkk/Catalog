@@ -169,6 +169,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NewFile1.txt" />
+    <None Include="Resources\background2.png" />
+    <None Include="Resources\background.png" />
+    <None Include="Resources\output-onlinejpgtools %282%291.png" />
+    <None Include="Resources\output-onlinejpgtools %281%291.png" />
+    <None Include="Resources\output-onlinejpgtools %282%29.png" />
+    <None Include="Resources\output-onlinejpgtools %281%29.png" />
+    <None Include="Resources\output-onlinejpgtools.png" />
     <None Include="Resources\7486161.jpg" />
     <None Include="Resources\output-onlinepngtools %2835%291.png" />
     <None Include="Resources\output-onlinepngtools %2835%29.png" />
