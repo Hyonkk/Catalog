@@ -14,6 +14,7 @@ namespace Catalog
     {
         private Rectangle OriginalSize;
         private Rectangle OriginalButton;
+        private float FontSize;
         public login()
         {
             InitializeComponent();
@@ -144,6 +145,7 @@ namespace Catalog
         {
             float xRatio = (float)(this.Width) / (float)(OriginalSize.Width);
             float yRatio = (float)(this.Height) / (float)(OriginalSize.Height);
+            float fontRatio = (float)(OriginalSize.Width)/(float)(FontSize);
 
             int newX=(int)(xRatio*r.Location.X);
             int newY=(int)(yRatio*r.Location.Y);
@@ -153,7 +155,8 @@ namespace Catalog
 
             c.Location=new Point(newX,newY);
             c.Size=new Size(newWidth, newHeight);
-            int a = 1;
+            //c.Font.Size= fontRatio*c.Size.Width;
+            c.Font = new System.Drawing.Font("Georgia", fontRatio * c.Font.Size);
         }
 
         private void login_Resize(object sender, EventArgs e)
@@ -167,6 +170,7 @@ namespace Catalog
         {
             OriginalSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
             OriginalButton = new Rectangle(login_elev.Location.X, login_elev.Location.Y, login_elev.Size.Width, login_elev.Size.Height);
+            FontSize = login_elev.Font.Size;
         }
     }
 }
