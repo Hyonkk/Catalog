@@ -69,6 +69,7 @@
             // 
             // CB_materii
             // 
+            this.CB_materii.BackColor = System.Drawing.Color.SandyBrown;
             this.CB_materii.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_materii.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_materii.FormattingEnabled = true;
@@ -87,12 +88,13 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.IndianRed;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_note,
             this.nota_note});
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkOrange;
             this.dataGridView1.Location = new System.Drawing.Point(11, 144);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
@@ -125,7 +127,7 @@
             // 
             // inapoi
             // 
-            this.inapoi.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.inapoi.BackColor = System.Drawing.Color.IndianRed;
             this.inapoi.FlatAppearance.BorderSize = 0;
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
@@ -145,13 +147,14 @@
             this.dataGridView2.AllowUserToResizeColumns = false;
             this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.IndianRed;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_absente,
             this.absenta_absente,
             this.motivat_absente});
+            this.dataGridView2.GridColor = System.Drawing.Color.DarkOrange;
             this.dataGridView2.Location = new System.Drawing.Point(498, 144);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
@@ -311,7 +314,7 @@
             // 
             // clasa
             // 
-            this.clasa.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.clasa.BackColor = System.Drawing.Color.IndianRed;
             this.clasa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.clasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clasa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -416,7 +419,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.lb_abs_nemotivate);
             this.Controls.Add(this.lb_absente_nemotivate);
