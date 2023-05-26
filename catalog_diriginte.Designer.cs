@@ -62,7 +62,7 @@
             // 
             // inapoi
             // 
-            this.inapoi.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.inapoi.BackColor = System.Drawing.Color.IndianRed;
             this.inapoi.FlatAppearance.BorderSize = 0;
             this.inapoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.inapoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
@@ -77,7 +77,7 @@
             // 
             // disciplina
             // 
-            this.disciplina.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.disciplina.BackColor = System.Drawing.Color.IndianRed;
             this.disciplina.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.disciplina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.disciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,6 +93,7 @@
             // 
             // CB_disciplina
             // 
+            this.CB_disciplina.BackColor = System.Drawing.Color.SandyBrown;
             this.CB_disciplina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CB_disciplina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CB_disciplina.FormattingEnabled = true;
@@ -111,12 +112,13 @@
             this.dgv_elevi.AllowUserToResizeColumns = false;
             this.dgv_elevi.AllowUserToResizeRows = false;
             this.dgv_elevi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_elevi.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgv_elevi.BackgroundColor = System.Drawing.Color.IndianRed;
             this.dgv_elevi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_elevi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_elevi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nr_elev,
             this.nume_elev});
+            this.dgv_elevi.GridColor = System.Drawing.Color.DarkOrange;
             this.dgv_elevi.Location = new System.Drawing.Point(11, 97);
             this.dgv_elevi.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_elevi.Name = "dgv_elevi";
@@ -156,13 +158,14 @@
             this.dgv_note.AllowUserToResizeColumns = false;
             this.dgv_note.AllowUserToResizeRows = false;
             this.dgv_note.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_note.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgv_note.BackgroundColor = System.Drawing.Color.IndianRed;
             this.dgv_note.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_note.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_note.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_note,
             this.nota_note});
             this.dgv_note.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dgv_note.GridColor = System.Drawing.Color.DarkOrange;
             this.dgv_note.Location = new System.Drawing.Point(497, 97);
             this.dgv_note.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_note.Name = "dgv_note";
@@ -200,13 +203,14 @@
             this.dgv_absente.AllowUserToResizeColumns = false;
             this.dgv_absente.AllowUserToResizeRows = false;
             this.dgv_absente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_absente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.dgv_absente.BackgroundColor = System.Drawing.Color.IndianRed;
             this.dgv_absente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_absente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_absente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_absente,
             this.absenta_absente,
             this.motivat_absente});
+            this.dgv_absente.GridColor = System.Drawing.Color.DarkOrange;
             this.dgv_absente.Location = new System.Drawing.Point(498, 347);
             this.dgv_absente.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_absente.Name = "dgv_absente";
@@ -246,7 +250,7 @@
             // 
             // sterg_ab
             // 
-            this.sterg_ab.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.sterg_ab.BackColor = System.Drawing.Color.IndianRed;
             this.sterg_ab.FlatAppearance.BorderSize = 0;
             this.sterg_ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sterg_ab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
@@ -262,24 +266,24 @@
             // lb_noab
             // 
             this.lb_noab.AutoSize = true;
-            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lb_noab.Location = new System.Drawing.Point(715, 628);
             this.lb_noab.Name = "lb_noab";
-            this.lb_noab.Size = new System.Drawing.Size(0, 17);
+            this.lb_noab.Size = new System.Drawing.Size(0, 20);
             this.lb_noab.TabIndex = 54;
             // 
             // lb_data
             // 
             this.lb_data.AutoSize = true;
-            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lb_data.Location = new System.Drawing.Point(715, 586);
             this.lb_data.Name = "lb_data";
-            this.lb_data.Size = new System.Drawing.Size(0, 17);
+            this.lb_data.Size = new System.Drawing.Size(0, 20);
             this.lb_data.TabIndex = 53;
             // 
             // b_ab
             // 
-            this.b_ab.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.b_ab.BackColor = System.Drawing.Color.IndianRed;
             this.b_ab.FlatAppearance.BorderSize = 0;
             this.b_ab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_ab.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
@@ -314,6 +318,7 @@
             // 
             // CB_noab
             // 
+            this.CB_noab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.CB_noab.FormattingEnabled = true;
             this.CB_noab.IntegralHeight = false;
             this.CB_noab.Items.AddRange(new object[] {
@@ -327,19 +332,21 @@
             "8",
             "9",
             "10"});
-            this.CB_noab.Location = new System.Drawing.Point(934, 628);
+            this.CB_noab.Location = new System.Drawing.Point(885, 621);
             this.CB_noab.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.CB_noab.Name = "CB_noab";
-            this.CB_noab.Size = new System.Drawing.Size(31, 21);
+            this.CB_noab.Size = new System.Drawing.Size(87, 28);
             this.CB_noab.TabIndex = 48;
             this.CB_noab.SelectedIndexChanged += new System.EventHandler(this.CB_noab_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(934, 591);
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dateTimePicker1.Location = new System.Drawing.Point(933, 580);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(17, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(39, 23);
             this.dateTimePicker1.TabIndex = 47;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -368,7 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Bisque;
+            this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(984, 776);
             this.Controls.Add(this.lb_med);
             this.Controls.Add(this.lb_medie);

@@ -32,47 +32,51 @@ namespace Catalog
 
         private void dgv_elevi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (ctrl == 1)
+            try
             {
-                global.elev_selectat = dgv_elevi.CurrentCell.Value.ToString();
-                global.medie = -1;
-                lb_med.Text = "Nu se poate calcula media";
-                Server.afis_absente_profesori_();
-                Server.afis_note_profesori_();
-                Server.nume_to_id();
-                Server.afis_media();
-                lb_medie.Visible = true;
-                lb_med.Visible = true;
-                if (global.medie != -1)
+                if (ctrl == 1)
                 {
-                    lb_med.Text = global.medie.ToString("0.00");
-                }
+                    global.elev_selectat = dgv_elevi.CurrentCell.Value.ToString();
+                    global.medie = -1;
+                    lb_med.Text = "Nu se poate calcula media";
+                    Server.afis_absente_profesori_();
+                    Server.afis_note_profesori_();
+                    Server.nume_to_id();
+                    Server.afis_media();
+                    lb_medie.Visible = true;
+                    lb_med.Visible = true;
+                    if (global.medie != -1)
+                    {
+                        lb_med.Text = global.medie.ToString("0.00");
+                    }
 
-                dgv_absente.Rows.Clear();
-                dgv_note.Rows.Clear();
+                    dgv_absente.Rows.Clear();
+                    dgv_note.Rows.Clear();
 
-                for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
-                {
-                    DataGridViewRow row = Server.dataGridView1.Rows[i];
-                    dgv_note.Rows.Add();
-                    DataGridViewRow row1 = dgv_note.Rows[i];
-                    row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
-                    row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
-                }
+                    for (int i = 0; i < Server.dataGridView1.RowCount - 1; i++)
+                    {
+                        DataGridViewRow row = Server.dataGridView1.Rows[i];
+                        dgv_note.Rows.Add();
+                        DataGridViewRow row1 = dgv_note.Rows[i];
+                        row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
+                        row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                    }
 
-                for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
-                {
-                    DataGridViewRow row = Server.dataGridView2.Rows[i];
-                    dgv_absente.Rows.Add();
-                    DataGridViewRow row1 = dgv_absente.Rows[i];
-                    row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
-                    row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
-                    row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                    for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+                    {
+                        DataGridViewRow row = Server.dataGridView2.Rows[i];
+                        dgv_absente.Rows.Add();
+                        DataGridViewRow row1 = dgv_absente.Rows[i];
+                        row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                        row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                        row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                    }
+                    dgv_note.CurrentCell = null;
+                    dgv_absente.CurrentCell = null;
                 }
-                dgv_note.CurrentCell = null;
-                dgv_absente.CurrentCell = null;
+                else MessageBox.Show("Selectati o clasa!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("Selectati o clasa!", "Eroare!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            catch { };
         }
 
         private void CB_disciplina_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,22 +169,26 @@ namespace Catalog
 
         private void dgv_absente_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            global.motivat = Convert.ToBoolean(dgv_absente.SelectedCells[2].Value);
-            global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
-            Server.absenta_motivat();
-            Server.afis_absente_profesori_();
-
-            dgv_absente.Rows.Clear();
-
-            for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+            try
             {
-                DataGridViewRow row = Server.dataGridView2.Rows[i];
-                dgv_absente.Rows.Add();
-                DataGridViewRow row1 = dgv_absente.Rows[i];
-                row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
-                row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
-                row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                global.motivat = Convert.ToBoolean(dgv_absente.SelectedCells[2].Value);
+                global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
+                Server.absenta_motivat();
+                Server.afis_absente_profesori_();
+
+                dgv_absente.Rows.Clear();
+
+                for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = Server.dataGridView2.Rows[i];
+                    dgv_absente.Rows.Add();
+                    DataGridViewRow row1 = dgv_absente.Rows[i];
+                    row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                    row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                    row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                }
             }
+            catch { }
         }
     }
 }

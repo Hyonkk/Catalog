@@ -408,6 +408,7 @@ namespace Catalog
                     DataGridViewRow row = dataGridView1.Rows[rowId];
                     row.Cells["data_note"].Value = dt.Rows[i]["data"].ToString();
                     row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
+                    dt.Rows[i]["id"].ToString();
                 }
             }
         }
@@ -487,9 +488,7 @@ namespace Catalog
         {
             SqlCommand cmd = new SqlCommand("deletenota", sqlCon);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_de_sters;
-            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
-            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.Parameters.Add("@id", SqlDbType.VarChar, 50).Value = global.data_de_sters;
             cmd.ExecuteNonQuery();
         }
         public static void absenta_delete()
