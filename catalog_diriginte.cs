@@ -60,6 +60,7 @@ namespace Catalog
                         DataGridViewRow row1 = dgv_note.Rows[i];
                         row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
                         row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                        row1.Cells["id_note"].Value = row.Cells["id_note"].Value;
                     }
 
                     for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
@@ -70,6 +71,7 @@ namespace Catalog
                         row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
                         row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
                         row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                        row1.Cells["id_absente"].Value = row.Cells["id_absente"].Value;
                     }
                     dgv_note.CurrentCell = null;
                     dgv_absente.CurrentCell = null;
@@ -121,6 +123,7 @@ namespace Catalog
                     row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
                     row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
                     row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                    row1.Cells["id_absente"].Value = row.Cells["id_absente"].Value;
                 }
 
                 lb_data.Text = "";
@@ -142,29 +145,33 @@ namespace Catalog
             global.noab = Convert.ToInt32(lb_noab.Text);
         }
 
-        private void sterg_ab_Click(object sender, EventArgs e)
+        private void reset_Click(object sender, EventArgs e)
         {
             dgv_note.CurrentCell = null;
             dgv_absente.CurrentCell = null;
         }
-
-        private void reset_Click(object sender, EventArgs e)
+        private void sterg_ab_Click(object sender, EventArgs e)
         {
-            global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
-            Server.absenta_delete();
-            Server.afis_absente_profesori_();
-
-            dgv_absente.Rows.Clear();
-
-            for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+            try
             {
-                DataGridViewRow row = Server.dataGridView2.Rows[i];
-                dgv_absente.Rows.Add();
-                DataGridViewRow row1 = dgv_absente.Rows[i];
-                row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
-                row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
-                row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                global.data_de_sters = Convert.ToInt32(dgv_absente.SelectedCells[3].Value);
+                Server.absenta_delete();
+                Server.afis_absente_profesori_();
+
+                dgv_absente.Rows.Clear();
+
+                for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = Server.dataGridView2.Rows[i];
+                    dgv_absente.Rows.Add();
+                    DataGridViewRow row1 = dgv_absente.Rows[i];
+                    row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
+                    row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                    row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                    row1.Cells["id_absente"].Value = row.Cells["id_absente"].Value;
+                }
             }
+            catch { };
         }
 
         private void dgv_absente_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -172,7 +179,7 @@ namespace Catalog
             try
             {
                 global.motivat = Convert.ToBoolean(dgv_absente.SelectedCells[2].Value);
-                global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
+                global.data_de_sters = Convert.ToInt32(dgv_absente.SelectedCells[3].Value);
                 Server.absenta_motivat();
                 Server.afis_absente_profesori_();
 
@@ -186,6 +193,7 @@ namespace Catalog
                     row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
                     row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
                     row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                    row1.Cells["id_absente"].Value = row.Cells["id_absente"].Value;
                 }
             }
             catch { }

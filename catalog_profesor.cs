@@ -78,6 +78,7 @@ namespace Catalog
                         DataGridViewRow row1 = dgv_note.Rows[i];
                         row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
                         row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                        row1.Cells["id_note"].Value = row.Cells["id_note"].Value.ToString();
                     }
 
                     for (int i = 0; i < Server.dataGridView2.RowCount - 1; i++)
@@ -129,6 +130,7 @@ namespace Catalog
                     DataGridViewRow row1 = dgv_note.Rows[i];
                     row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
                     row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                    row1.Cells["id_note"].Value = row.Cells["id_note"].Value.ToString();
                 }
                 lb_data.Text = "";
                 lb_noab.Text = "";
@@ -183,7 +185,7 @@ namespace Catalog
         {
             try
             {
-                global.data_de_sters = Convert.ToDateTime(dgv_note.SelectedCells[0].Value);
+                global.data_de_sters = Convert.ToInt32(dgv_note.SelectedCells[2].Value);
                 Server.nota_delete();
                 Server.afis_note_profesori_();
                 Server.afis_media();
@@ -199,6 +201,7 @@ namespace Catalog
                     DataGridViewRow row1 = dgv_note.Rows[i];
                     row1.Cells["data_note"].Value = row.Cells["data_note"].Value;
                     row1.Cells["nota_note"].Value = row.Cells["nota_note"].Value;
+                    row1.Cells["id_note"].Value = row.Cells["id_note"].Value;
                 }
             }
             catch { };
@@ -215,7 +218,7 @@ namespace Catalog
         {
             try
             {
-                global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
+                global.data_de_sters = Convert.ToInt32(dgv_absente.SelectedCells[3].Value);
                 Server.absenta_delete();
                 Server.afis_absente_profesori_();
 
@@ -228,6 +231,7 @@ namespace Catalog
                     DataGridViewRow row1 = dgv_absente.Rows[i];
                     row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
                     row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
+                    row1.Cells["id_absente"].Value = row.Cells["id_absente"].Value;
                     row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
                 }
             }
@@ -239,7 +243,7 @@ namespace Catalog
             try
             {
                 global.motivat = Convert.ToBoolean(dgv_absente.SelectedCells[2].Value);
-                global.data_de_sters = Convert.ToDateTime(dgv_absente.SelectedCells[0].Value);
+                global.data_de_sters = Convert.ToInt32(dgv_absente.SelectedCells[3].Value);
                 Server.absenta_motivat();
                 Server.afis_absente_profesori_();
 
@@ -253,6 +257,7 @@ namespace Catalog
                     row1.Cells["data_absente"].Value = row.Cells["data_absente"].Value;
                     row1.Cells["absenta_absente"].Value = row.Cells["absenta_absente"].Value;
                     row1.Cells["motivat_absente"].Value = row.Cells["motivat_absente"].Value;
+                    row1.Cells["id_absente"].Value = row.Cells["id_absente"].Value;
                 }
             }
             catch { }

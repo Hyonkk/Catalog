@@ -29,7 +29,7 @@ namespace Catalog
         public static int id_nume;
         public static int noab;
         public static DateTime data_selectat;
-        public static DateTime data_de_sters;
+        public static int data_de_sters;
         public static int elev_selectat_id;
         public static Boolean motivat;
         public static double medie;

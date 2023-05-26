@@ -388,11 +388,14 @@ namespace Catalog
             dataGridView1 = new DataGridView();
             DataGridViewTextBoxColumn data_note = new DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn nota_note = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn id_note = new DataGridViewTextBoxColumn();
             dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             data_note,
-            nota_note});
+            nota_note,
+            id_note});
             data_note.Name = "data_note";
             nota_note.Name = "nota_note";
+            id_note.Name = "id_note";
             dataGridView1.Rows.Clear();
             {
                 SqlCommand cmd = new SqlCommand("AfisNote", sqlCon);
@@ -408,7 +411,8 @@ namespace Catalog
                     DataGridViewRow row = dataGridView1.Rows[rowId];
                     row.Cells["data_note"].Value = dt.Rows[i]["data"].ToString();
                     row.Cells["nota_note"].Value = dt.Rows[i]["note"].ToString();
-                    dt.Rows[i]["id"].ToString();
+                    row.Cells["id_note"].Value = dt.Rows[i]["id"].ToString();
+
                 }
             }
         }
@@ -419,13 +423,16 @@ namespace Catalog
             DataGridViewTextBoxColumn data_absente = new DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn absenta_absente = new DataGridViewTextBoxColumn();
             DataGridViewTextBoxColumn motivat_absente = new DataGridViewTextBoxColumn();
+            DataGridViewTextBoxColumn id_absente = new DataGridViewTextBoxColumn();
             dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             data_absente,
             absenta_absente,
-            motivat_absente});
+            motivat_absente,
+            id_absente});
             data_absente.Name = "data_absente";
             absenta_absente.Name = "absenta_absente";
             motivat_absente.Name = "motivat_absente";
+            id_absente.Name = "id_absente";
             dataGridView2.Rows.Clear();
             {
                 SqlCommand cmd = new SqlCommand("AfisAbsente", sqlCon);
@@ -442,6 +449,7 @@ namespace Catalog
                     row.Cells["data_absente"].Value = dt1.Rows[i]["data"].ToString();
                     row.Cells["absenta_absente"].Value = dt1.Rows[i]["absente"].ToString();
                     row.Cells["motivat_absente"].Value = dt1.Rows[i]["motivat"].ToString();
+                    row.Cells["id_absente"].Value = dt1.Rows[i]["id"].ToString();
                 }
             }
         }
@@ -495,9 +503,7 @@ namespace Catalog
         {
             SqlCommand cmd = new SqlCommand("deleteabsenta", sqlCon);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_de_sters;
-            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
-            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.Parameters.Add("@id", SqlDbType.VarChar, 50).Value = global.data_de_sters;
             cmd.ExecuteNonQuery();
         }
 
@@ -505,9 +511,7 @@ namespace Catalog
         {
             SqlCommand cmd = new SqlCommand("motivatabsenta", sqlCon);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@data", SqlDbType.VarChar, 50).Value = global.data_de_sters;
-            cmd.Parameters.Add("@id_elev", SqlDbType.VarChar, 50).Value = global.id_nume;
-            cmd.Parameters.Add("@id_disc", SqlDbType.VarChar, 50).Value = global.materie_selectata_id;
+            cmd.Parameters.Add("@id", SqlDbType.VarChar, 50).Value = global.data_de_sters;
             cmd.Parameters.Add("@motivat", SqlDbType.VarChar, 50).Value = global.motivat;
             cmd.ExecuteNonQuery();
         }

@@ -39,12 +39,7 @@
             this.nr_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nume_elev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_note = new System.Windows.Forms.DataGridView();
-            this.data_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_absente = new System.Windows.Forms.DataGridView();
-            this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.sterg_ab = new System.Windows.Forms.Button();
             this.lb_noab = new System.Windows.Forms.Label();
             this.lb_data = new System.Windows.Forms.Label();
@@ -55,6 +50,14 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lb_med = new System.Windows.Forms.Label();
             this.lb_medie = new System.Windows.Forms.Label();
+            this.data_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.absenta_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.motivat_absente = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.id_absente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_elevi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_note)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_absente)).BeginInit();
@@ -163,7 +166,8 @@
             this.dgv_note.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_note.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_note,
-            this.nota_note});
+            this.nota_note,
+            this.id_note});
             this.dgv_note.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgv_note.GridColor = System.Drawing.Color.DarkOrange;
             this.dgv_note.Location = new System.Drawing.Point(497, 97);
@@ -178,24 +182,6 @@
             this.dgv_note.TabIndex = 43;
             this.dgv_note.TabStop = false;
             // 
-            // data_note
-            // 
-            dataGridViewCellStyle2.Format = "M";
-            dataGridViewCellStyle2.NullValue = null;
-            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
-            this.data_note.HeaderText = "Data";
-            this.data_note.MinimumWidth = 6;
-            this.data_note.Name = "data_note";
-            this.data_note.ReadOnly = true;
-            this.data_note.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // nota_note
-            // 
-            this.nota_note.HeaderText = "Nota";
-            this.nota_note.MinimumWidth = 6;
-            this.nota_note.Name = "nota_note";
-            this.nota_note.ReadOnly = true;
-            // 
             // dgv_absente
             // 
             this.dgv_absente.AllowUserToAddRows = false;
@@ -209,7 +195,8 @@
             this.dgv_absente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.data_absente,
             this.absenta_absente,
-            this.motivat_absente});
+            this.motivat_absente,
+            this.id_absente});
             this.dgv_absente.GridColor = System.Drawing.Color.DarkOrange;
             this.dgv_absente.Location = new System.Drawing.Point(498, 347);
             this.dgv_absente.Margin = new System.Windows.Forms.Padding(2);
@@ -222,31 +209,6 @@
             this.dgv_absente.TabIndex = 44;
             this.dgv_absente.TabStop = false;
             this.dgv_absente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_absente_CellValueChanged);
-            // 
-            // data_absente
-            // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
-            this.data_absente.HeaderText = "Data";
-            this.data_absente.MinimumWidth = 6;
-            this.data_absente.Name = "data_absente";
-            this.data_absente.ReadOnly = true;
-            // 
-            // absenta_absente
-            // 
-            this.absenta_absente.HeaderText = "Absente";
-            this.absenta_absente.MinimumWidth = 6;
-            this.absenta_absente.Name = "absenta_absente";
-            this.absenta_absente.ReadOnly = true;
-            // 
-            // motivat_absente
-            // 
-            this.motivat_absente.HeaderText = "Motivat";
-            this.motivat_absente.MinimumWidth = 6;
-            this.motivat_absente.Name = "motivat_absente";
-            this.motivat_absente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.motivat_absente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // sterg_ab
             // 
@@ -371,12 +333,84 @@
             this.lb_medie.Text = "Media: ";
             this.lb_medie.Visible = false;
             // 
+            // data_note
+            // 
+            dataGridViewCellStyle2.Format = "M";
+            dataGridViewCellStyle2.NullValue = null;
+            this.data_note.DefaultCellStyle = dataGridViewCellStyle2;
+            this.data_note.HeaderText = "Data";
+            this.data_note.MinimumWidth = 6;
+            this.data_note.Name = "data_note";
+            this.data_note.ReadOnly = true;
+            this.data_note.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // nota_note
+            // 
+            this.nota_note.HeaderText = "Nota";
+            this.nota_note.MinimumWidth = 6;
+            this.nota_note.Name = "nota_note";
+            this.nota_note.ReadOnly = true;
+            // 
+            // id_note
+            // 
+            this.id_note.HeaderText = "";
+            this.id_note.Name = "id_note";
+            this.id_note.ReadOnly = true;
+            this.id_note.Visible = false;
+            // 
+            // data_absente
+            // 
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.data_absente.DefaultCellStyle = dataGridViewCellStyle3;
+            this.data_absente.HeaderText = "Data";
+            this.data_absente.MinimumWidth = 6;
+            this.data_absente.Name = "data_absente";
+            this.data_absente.ReadOnly = true;
+            // 
+            // absenta_absente
+            // 
+            this.absenta_absente.HeaderText = "Absente";
+            this.absenta_absente.MinimumWidth = 6;
+            this.absenta_absente.Name = "absenta_absente";
+            this.absenta_absente.ReadOnly = true;
+            // 
+            // motivat_absente
+            // 
+            this.motivat_absente.HeaderText = "Motivat";
+            this.motivat_absente.MinimumWidth = 6;
+            this.motivat_absente.Name = "motivat_absente";
+            this.motivat_absente.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.motivat_absente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // id_absente
+            // 
+            this.id_absente.HeaderText = "";
+            this.id_absente.Name = "id_absente";
+            this.id_absente.Visible = false;
+            // 
+            // reset
+            // 
+            this.reset.BackColor = System.Drawing.Color.IndianRed;
+            this.reset.FlatAppearance.BorderSize = 0;
+            this.reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.reset.Location = new System.Drawing.Point(849, 302);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(108, 40);
+            this.reset.TabIndex = 57;
+            this.reset.TabStop = false;
+            this.reset.Text = "Resetare";
+            this.reset.UseVisualStyleBackColor = false;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
+            // 
             // catalog_diriginte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(984, 776);
+            this.Controls.Add(this.reset);
             this.Controls.Add(this.lb_med);
             this.Controls.Add(this.lb_medie);
             this.Controls.Add(this.lb_noab);
@@ -413,12 +447,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nr_elev;
         private System.Windows.Forms.DataGridViewTextBoxColumn nume_elev;
         public System.Windows.Forms.DataGridView dgv_note;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_note;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
         public System.Windows.Forms.DataGridView dgv_absente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
         public System.Windows.Forms.Button sterg_ab;
         private System.Windows.Forms.Label lb_noab;
         private System.Windows.Forms.Label lb_data;
@@ -429,5 +458,13 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lb_med;
         private System.Windows.Forms.Label lb_medie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota_note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_absente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn absenta_absente;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn motivat_absente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_absente;
+        public System.Windows.Forms.Button reset;
     }
 }
